@@ -1,25 +1,42 @@
 {
-  "name": "@deskpro-apps/my-app",
-  "title": "My App",
-  "description": "My Deskpro app",
-  "version": "0.0.6",
+  "name": "@deskpro-apps/klaviyo",
+  "title": "Klaviyo",
+  "description": "",
+  "version": "0.0.0",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
-  "targets": [{ "target": "ticket_sidebar", "entrypoint": "index.html" }],
+  "appStoreUrl": "https://www.deskpro.com/product-embed/apps/klaviyo",
+  "serveUrl": "https://apps-cdn.deskpro-service.com/__name__/__version__",
+  "targets": [{ "target": "user_sidebar", "entrypoint": "index.html" }],
+  "entityAssociations": {
+    "linkedKlaviyoProfiles": {
+      "entity": "person",
+      "type": "external_id",
+      "title": "Klaviyo Profiles"
+    }
+  },
   "settings": {
-    "example": {
-      "title": "Example Setting",
-      "description": "Example backend only setting",
+    "api_key": {
+      "title": "API Key",
       "type": "string",
+      "isRequired": true,
+      "isBackendOnly": true,
+      "order": 10
+    },
+    "verify_settings": {
+      "title": "",
+      "type": "app_embedded",
+      "options": { "entrypoint": "#/admin/verify_settings" },
       "isRequired": false,
-      "isBackendOnly": true
+      "isBackendOnly": true,
+      "order": 20
     }
   },
   "proxy": {
     "whitelist": [
       {
-        "url": "https://jsonplaceholder.typicode.com/.*",
+        "url": "https://a.klaviyo.com/api/.*",
         "methods": ["GET"],
         "timeout": 20
       }

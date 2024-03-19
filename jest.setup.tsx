@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { TextDecoder, TextEncoder } from "util";
 import * as React from "react";
 import { lightTheme } from "@deskpro/deskpro-ui";
-import { mockClient, mockTicketContext } from "./testing";
+import { mockClient, mockUserContext } from "./testing";
 import type { IDeskproClient } from "@deskpro/app-sdk";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -29,17 +29,17 @@ jest.mock("@deskpro/app-sdk", () => ({
     deps: [] = []
   ) => {
     React.useEffect(() => {
-      !!hooks.onChange && hooks.onChange(mockTicketContext);
-      !!hooks.onShow && hooks.onShow(mockTicketContext);
-      !!hooks.onReady && hooks.onReady(mockTicketContext);
-      !!hooks.onAdminSettingsChange && hooks.onAdminSettingsChange(mockTicketContext.settings);
+      !!hooks.onChange && hooks.onChange(mockUserContext);
+      !!hooks.onShow && hooks.onShow(mockUserContext);
+      !!hooks.onReady && hooks.onReady(mockUserContext);
+      !!hooks.onAdminSettingsChange && hooks.onAdminSettingsChange(mockUserContext.settings);
       /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, deps);
   },
   useInitialisedDeskproAppClient: (callback: (param: typeof mockClient) => void) => {
     callback(mockClient);
   },
-  useDeskproLatestAppContext: () => ({ context: mockTicketContext }),
+  useDeskproLatestAppContext: () => ({ context: mockUserContext }),
   useDeskproAppTheme: () => ({ theme: lightTheme }),
   proxyFetch: async () => fetch,
   LoadingSpinner: () => <>Loading...</>,
