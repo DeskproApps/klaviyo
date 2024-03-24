@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/klaviyo",
   "title": "Klaviyo",
   "description": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
@@ -27,7 +27,7 @@
     "verify_settings": {
       "title": "",
       "type": "app_embedded",
-      "options": { "entrypoint": "#/admin/verify_settings/" },
+      "options": { "entrypoint": "#/admin/verify_settings" },
       "isRequired": false,
       "isBackendOnly": true,
       "order": 20
