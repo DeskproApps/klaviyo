@@ -1,0 +1,1 @@
+export { LinkProfilePage } from "./LinkProfilePage";

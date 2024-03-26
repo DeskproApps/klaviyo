@@ -24,7 +24,7 @@ const baseRequest: Request = async (client, {
     method,
     body,
     headers: {
-      "Authorization": `Klaviyo-API-Key ${placeholders.API_KEY}`,
+      "Authorization": `Klaviyo-API-Key ${settings?.api_key || placeholders.API_KEY}`,
       "revision": API_REVISION,
       "Accept": "application/json",
       ...customHeaders,

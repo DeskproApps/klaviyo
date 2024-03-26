@@ -1,6 +1,8 @@
 {
   "type": "user",
-  "settings": {},
+  "settings": {
+    "api_key": "thisIsApiKey"
+  },
   "data": {
     "user": {
       "id": "1000",

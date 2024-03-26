@@ -9,7 +9,12 @@ import {
   useDeskproAppEvents,
 } from "@deskpro/app-sdk";
 import { isNavigatePayload } from "./utils";
-import { LoadingAppPage } from "./pages";
+import {
+  HomePage,
+  LoadingAppPage,
+  LinkProfilePage,
+  VerifySettingsPage,
+} from "./pages";
 import type { FC } from "react";
 import type { EventPayload } from "./types";
 
@@ -51,6 +56,9 @@ const App: FC = () => {
   return (
     <>
       <Routes>
+        <Route path="/admin/verify_settings" element={<VerifySettingsPage/>} />
+        <Route path="/home" element={<HomePage/>}/>
+        <Route path="/profiles/link" element={<LinkProfilePage/>} />
         <Route index element={<LoadingAppPage/>} />
       </Routes>
       {!isAdmin && (<><br/><br/><br/></>)}

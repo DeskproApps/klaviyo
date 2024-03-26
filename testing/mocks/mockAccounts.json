@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "type": "account",
+      "id": "SyTUTp",
+      "attributes": {
+        "contact_information": {
+          "default_sender_name": "Deskpro Ltd.",
+          "default_sender_email": "ilia.makarov@deskpro.com",
+          "website_url": "https://deskpro.com",
+          "organization_name": "Deskpro Ltd.",
+          "street_address": {
+            "address1": "79 Hartfield Rd,",
+            "address2": null,
+            "city": "London",
+            "region": null,
+            "country": "United Kingdom",
+            "zip": "SW19 3ES"
+          }
+        },
+        "industry": "Education",
+        "timezone": "Europe/London",
+        "preferred_currency": "GBP",
+        "public_api_key": "SyTUTp"
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/accounts/SyTUTp/"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://a.klaviyo.com/api/accounts",
+    "next": null,
+    "prev": null
+  }
+}

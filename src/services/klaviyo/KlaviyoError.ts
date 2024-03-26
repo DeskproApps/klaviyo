@@ -10,7 +10,7 @@ class KlaviyoError extends Error {
   data: KlaviyoAPIError;
 
   constructor({ status, data }: InitData) {
-    const message = "KlaviyoError Api Error";
+    const message = "Klaviyo Api Error";
     super(message);
 
     this.data = data;
