@@ -1,2 +1,3 @@
 export { ErrorFallback } from "./Error";
 export { VerifySettings } from "./VerifySettings";
+export { LinkProfile } from "./LinkProfile";
