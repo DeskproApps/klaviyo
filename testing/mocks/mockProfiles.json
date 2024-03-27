@@ -1,0 +1,299 @@
+{
+  "data": [
+    {
+      "type": "profile",
+      "id": "01HS8726W0GXBV5N8HRZE9DCWN",
+      "attributes": {
+        "email": "ivan.vyhovsky@cossacks.org",
+        "phone_number": "+441234567890",
+        "external_id": null,
+        "anonymous_id": null,
+        "first_name": "Ivan",
+        "last_name": "Vyhovsky",
+        "organization": "Cossack Hetmanate",
+        "title": "Hetman of Zaporizhian Host",
+        "image": null,
+        "created": "2024-03-18T07:22:54+00:00",
+        "updated": "2024-04-01T12:13:00+00:00",
+        "last_event_date": "2024-04-01T12:13:00+00:00",
+        "location": {
+          "region": "GA",
+          "city": "Atlanta",
+          "address2": "Ste 302",
+          "address1": "285 Andrew Young International Blvd",
+          "longitude": null,
+          "latitude": null,
+          "zip": "30313",
+          "country": "USA",
+          "timezone": null,
+          "ip": "166.137.246.54"
+        },
+        "properties": {
+          "$latitude": "33.7608",
+          "$longitude": "84.4011",
+          "klaviyo_sample_data_gen": true
+        }
+      },
+      "relationships": {
+        "lists": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/relationships/lists/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/lists/"
+          }
+        },
+        "segments": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/relationships/segments/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/segments/"
+          }
+        },
+        "conversation": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/relationships/conversation/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/conversation/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/"
+      }
+    },
+    {
+      "type": "profile",
+      "id": "01HS8726YFD7F4NYQHP8E3XBPE",
+      "attributes": {
+        "email": "pavlo.skoropadskyi@ukrainianstate.gov",
+        "phone_number": "",
+        "external_id": null,
+        "anonymous_id": null,
+        "first_name": "Pavlo",
+        "last_name": "Skoropadskyi",
+        "organization": "Ukrainian State",
+        "title": "Hetman",
+        "image": null,
+        "created": "2024-03-18T07:22:54+00:00",
+        "updated": "2024-04-01T12:12:38+00:00",
+        "last_event_date": "2024-04-01T12:12:38+00:00",
+        "location": {
+          "region": "CA",
+          "city": "Inglewood",
+          "address2": "Unit 1",
+          "address1": "3950 W Century Blvd",
+          "longitude": null,
+          "latitude": null,
+          "zip": "90303",
+          "country": "USA",
+          "timezone": null,
+          "ip": "166.137.246.54"
+        },
+        "properties": {
+          "$latitude": "33.9610",
+          "$longitude": "118.3553",
+          "klaviyo_sample_data_gen": true
+        }
+      },
+      "relationships": {
+        "lists": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS8726YFD7F4NYQHP8E3XBPE/relationships/lists/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS8726YFD7F4NYQHP8E3XBPE/lists/"
+          }
+        },
+        "segments": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS8726YFD7F4NYQHP8E3XBPE/relationships/segments/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS8726YFD7F4NYQHP8E3XBPE/segments/"
+          }
+        },
+        "conversation": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS8726YFD7F4NYQHP8E3XBPE/relationships/conversation/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS8726YFD7F4NYQHP8E3XBPE/conversation/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/profiles/01HS8726YFD7F4NYQHP8E3XBPE/"
+      }
+    },
+    {
+      "type": "profile",
+      "id": "01HS87270XSQW5DVPHKA2HV7CA",
+      "attributes": {
+        "email": "pylyp.orlyk@zaporizhian.org",
+        "phone_number": "",
+        "external_id": null,
+        "anonymous_id": null,
+        "first_name": "Pylyp",
+        "last_name": "Orlyk",
+        "organization": "Zaporizhian Host",
+        "title": "Hetman",
+        "image": null,
+        "created": "2024-03-18T07:22:54+00:00",
+        "updated": "2024-04-01T12:12:22+00:00",
+        "last_event_date": "2024-04-01T12:12:22+00:00",
+        "location": {
+          "region": "OR",
+          "city": "Portland",
+          "address2": "Ste 200",
+          "address1": "1225 NE 2nd Ave",
+          "longitude": null,
+          "latitude": null,
+          "zip": "97232",
+          "country": "USA",
+          "timezone": null,
+          "ip": "166.137.246.54"
+        },
+        "properties": {
+          "$latitude": "45.5122",
+          "$longitude": "122.6587",
+          "klaviyo_sample_data_gen": true
+        }
+      },
+      "relationships": {
+        "lists": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87270XSQW5DVPHKA2HV7CA/relationships/lists/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87270XSQW5DVPHKA2HV7CA/lists/"
+          }
+        },
+        "segments": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87270XSQW5DVPHKA2HV7CA/relationships/segments/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87270XSQW5DVPHKA2HV7CA/segments/"
+          }
+        },
+        "conversation": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87270XSQW5DVPHKA2HV7CA/relationships/conversation/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87270XSQW5DVPHKA2HV7CA/conversation/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/profiles/01HS87270XSQW5DVPHKA2HV7CA/"
+      }
+    },
+    {
+      "type": "profile",
+      "id": "01HS87273MA46HHZG1D9CQPZWV",
+      "attributes": {
+        "email": "ivan.mazepa@cossacks.org",
+        "phone_number": "",
+        "external_id": null,
+        "anonymous_id": null,
+        "first_name": "Ivan",
+        "last_name": "Mazepa",
+        "organization": "Cossack Hetmanate",
+        "title": "Hetman",
+        "image": null,
+        "created": "2024-03-18T07:22:54+00:00",
+        "updated": "2024-04-01T12:12:03+00:00",
+        "last_event_date": "2024-04-01T12:12:03+00:00",
+        "location": {
+          "region": "IL",
+          "city": "Chicago",
+          "address2": "Unit 2",
+          "address1": "2102 W Monroe St",
+          "longitude": null,
+          "latitude": null,
+          "zip": "60612",
+          "country": "USA",
+          "timezone": null,
+          "ip": "166.137.246.54"
+        },
+        "properties": {
+          "$latitude": "41.8798",
+          "$longitude": "87.7386",
+          "klaviyo_sample_data_gen": true
+        }
+      },
+      "relationships": {
+        "lists": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87273MA46HHZG1D9CQPZWV/relationships/lists/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87273MA46HHZG1D9CQPZWV/lists/"
+          }
+        },
+        "segments": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87273MA46HHZG1D9CQPZWV/relationships/segments/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87273MA46HHZG1D9CQPZWV/segments/"
+          }
+        },
+        "conversation": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87273MA46HHZG1D9CQPZWV/relationships/conversation/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87273MA46HHZG1D9CQPZWV/conversation/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/profiles/01HS87273MA46HHZG1D9CQPZWV/"
+      }
+    },
+    {
+      "type": "profile",
+      "id": "01HS87276JGW4S7XBMZ9FE9C6C",
+      "attributes": {
+        "email": "bohdan.khmelnytsky@cossacks.org",
+        "phone_number": "",
+        "external_id": null,
+        "anonymous_id": null,
+        "first_name": "Bohdan",
+        "last_name": "Khmelnytsky",
+        "organization": "Cossack Hetmanate",
+        "title": "Hetman",
+        "image": null,
+        "created": "2024-03-18T07:22:54+00:00",
+        "updated": "2024-04-01T12:11:34+00:00",
+        "last_event_date": "2024-04-01T12:11:34+00:00",
+        "location": {
+          "region": "CA",
+          "city": "San Francisco",
+          "address2": "9th floor",
+          "address1": "1800 Owens St",
+          "longitude": null,
+          "latitude": null,
+          "zip": "94158",
+          "country": "USA",
+          "timezone": null,
+          "ip": "166.137.246.54"
+        },
+        "properties": {
+          "$latitude": "41.8798",
+          "$longitude": "87.7386",
+          "klaviyo_sample_data_gen": true
+        }
+      },
+      "relationships": {
+        "lists": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87276JGW4S7XBMZ9FE9C6C/relationships/lists/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87276JGW4S7XBMZ9FE9C6C/lists/"
+          }
+        },
+        "segments": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87276JGW4S7XBMZ9FE9C6C/relationships/segments/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87276JGW4S7XBMZ9FE9C6C/segments/"
+          }
+        },
+        "conversation": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/profiles/01HS87276JGW4S7XBMZ9FE9C6C/relationships/conversation/",
+            "related": "https://a.klaviyo.com/api/profiles/01HS87276JGW4S7XBMZ9FE9C6C/conversation/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/profiles/01HS87276JGW4S7XBMZ9FE9C6C/"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://a.klaviyo.com/api/profiles?filter=any%28email%2C%5B%22cormac.mccarthy%40example.org%22%2C%22ivan.mazepa%40cossacks.org%22%2C%22pylyp.orlyk%40zaporizhian.org%22%2C%22pavlo.skoropadskyi%40ukrainianstate.gov%22%2C%22ivan.vyhovsky%40cossacks.org%22%2C%22bohdan.khmelnytsky%40cossacks.org%22%5D%29",
+    "next": null,
+    "prev": null
+  }
+}

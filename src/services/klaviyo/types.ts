@@ -20,3 +20,5 @@ export type KlaviyoAPIError = {
 };
 
 export type Account = components["schemas"]["AccountResponseObjectResource"];
+
+export type Profile = components["schemas"]["ProfileResponseObjectResource"];

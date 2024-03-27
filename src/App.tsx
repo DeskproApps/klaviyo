@@ -8,6 +8,7 @@ import {
   useDeskproAppClient,
   useDeskproAppEvents,
 } from "@deskpro/app-sdk";
+import { useUnlinkProfile } from "./hooks";
 import { isNavigatePayload } from "./utils";
 import {
   HomePage,
@@ -22,6 +23,7 @@ const App: FC = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { client } = useDeskproAppClient();
+  const { unlink, isLoading } = useUnlinkProfile();
   const isAdmin = useMemo(() => pathname.includes("/admin/"), [pathname]);
 
   useDeskproElements(({ registerElement }) => {
@@ -30,11 +32,8 @@ const App: FC = () => {
 
   const debounceElementEvent = useDebouncedCallback((_, __, payload: EventPayload) => {
     return match(payload.type)
-      .with("changePage", () => {
-        if (isNavigatePayload(payload)) {
-          navigate(payload.path);
-        }
-      })
+      .with("changePage", () => isNavigatePayload(payload) && navigate(payload.path))
+      .with("unlink", unlink)
       .run();
   }, 500);
 
@@ -47,7 +46,7 @@ const App: FC = () => {
     onElementEvent: debounceElementEvent,
   }, [client]);
 
-  if (!client) {
+  if (!client || isLoading) {
     return (
       <LoadingSpinner/>
     );

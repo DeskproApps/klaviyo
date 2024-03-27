@@ -13,7 +13,7 @@ const queryClient = new QueryClient({
 });
 
 const QueryKey = {
-  //..
+  SEARCH: "search",
 }
 
 export { queryClient, QueryKey };

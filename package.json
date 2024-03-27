@@ -58,6 +58,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "node-fetch": "^3.3.2",
     "prettier": "^3.2.5",
+    "resize-observer-polyfill": "^1.5.1",
     "rimraf": "^3.0.2",
     "rollup-plugin-copy": "^3.5.0",
     "slugify": "^1.6.5",
