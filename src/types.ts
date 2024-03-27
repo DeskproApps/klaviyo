@@ -39,23 +39,25 @@ export type Settings = {
   api_key?: string;
 };
 
+export type DPUser = {
+  id: string;
+  name: string;
+  firstName: string;
+  lastName: string;
+  titlePrefix: string;
+  isDisabled: boolean;
+  isAgent: boolean;
+  isConfirmed: boolean;
+  emails: string[];
+  primaryEmail: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  customFields: Dict<any>;
+  language: string;
+  locale: string;
+};
+
 export type UserData = {
-  user: {
-    id: string;
-    name: string;
-    firstName: string;
-    lastName: string;
-    titlePrefix: string;
-    isDisabled: boolean;
-    isAgent: boolean;
-    isConfirmed: boolean;
-    emails: string[];
-    primaryEmail: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    customFields: Dict<any>;
-    language: string;
-    locale: string;
-  },
+  user: DPUser;
 };
 
 export type UserContext = Context<UserData, Maybe<Settings>>;
