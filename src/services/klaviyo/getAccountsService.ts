@@ -5,7 +5,7 @@ import type { Account } from "./types";
 
 const getAccountsService = (
   client: IDeskproClient,
-  settings: Settings,
+  settings?: Settings,
 ) => {
   return baseRequest<Account[]>(client, {
     url: "/accounts",

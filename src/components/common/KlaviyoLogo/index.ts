@@ -1,0 +1,1 @@
+export { KlaviyoLogo } from "./KlaviyoLogo";

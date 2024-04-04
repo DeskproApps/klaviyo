@@ -5,3 +5,5 @@ export { isNavigatePayload } from "./isNavigatePayload";
 export { getOption } from "./getOption";
 export { getOptions } from "./getOptions";
 export { getError } from "./getError";
+export { getFilterString } from "./getFilterString";
+export { tryToLinkAutomatically } from "./tryToLinkAutomatically";
