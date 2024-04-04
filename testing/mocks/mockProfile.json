@@ -1,0 +1,291 @@
+{
+  "data": {
+    "type": "profile",
+    "id": "01HS8726W0GXBV5N8HRZE9DCWN",
+    "attributes": {
+      "email": "ivan.vyhovsky@cossacks.org",
+      "phone_number": "+441234567890",
+      "external_id": null,
+      "anonymous_id": null,
+      "first_name": "Ivan",
+      "last_name": "Vyhovsky",
+      "organization": "Cossack Hetmanate",
+      "title": "Hetman of Zaporizhian Host",
+      "image": null,
+      "created": "2024-03-18T07:22:54+00:00",
+      "updated": "2024-04-01T12:13:00+00:00",
+      "last_event_date": "2024-04-01T12:13:00+00:00",
+      "location": {
+        "address1": "285 Andrew Young International Blvd",
+        "longitude": null,
+        "city": "Atlanta",
+        "region": "GA",
+        "zip": "30313",
+        "latitude": null,
+        "country": "USA",
+        "address2": "Ste 302",
+        "timezone": null,
+        "ip": "166.137.246.54"
+      },
+      "properties": {
+        "$latitude": "33.7608",
+        "$longitude": "84.4011",
+        "klaviyo_sample_data_gen": true
+      }
+    },
+    "relationships": {
+      "lists": {
+        "data": [
+          {
+            "type": "list",
+            "id": "Sj29Rd"
+          },
+          {
+            "type": "list",
+            "id": "UQS6sM"
+          },
+          {
+            "type": "list",
+            "id": "WBrr5G"
+          }
+        ],
+        "links": {
+          "self": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/relationships/lists/",
+          "related": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/lists/"
+        }
+      },
+      "segments": {
+        "data": [
+          {
+            "type": "segment",
+            "id": "SenTvP"
+          },
+          {
+            "type": "segment",
+            "id": "TpMJpF"
+          },
+          {
+            "type": "segment",
+            "id": "VPeEwM"
+          },
+          {
+            "type": "segment",
+            "id": "VTRUSb"
+          }
+        ],
+        "links": {
+          "self": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/relationships/segments/",
+          "related": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/segments/"
+        }
+      },
+      "conversation": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/relationships/conversation/",
+          "related": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/conversation/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/profiles/01HS8726W0GXBV5N8HRZE9DCWN/"
+    }
+  },
+  "included": [
+    {
+      "type": "list",
+      "id": "Sj29Rd",
+      "attributes": {
+        "name": "Newsletter",
+        "created": "2024-03-18T07:17:15+00:00",
+        "updated": "2024-03-18T07:17:15+00:00",
+        "opt_in_process": "double_opt_in"
+      },
+      "relationships": {
+        "profiles": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/lists/Sj29Rd/relationships/profiles/",
+            "related": "https://a.klaviyo.com/api/lists/Sj29Rd/profiles/"
+          }
+        },
+        "tags": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/lists/Sj29Rd/relationships/tags/",
+            "related": "https://a.klaviyo.com/api/lists/Sj29Rd/tags/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/lists/Sj29Rd/"
+      }
+    },
+    {
+      "type": "list",
+      "id": "UQS6sM",
+      "attributes": {
+        "name": "Sample Data List",
+        "created": "2024-03-18T07:22:53+00:00",
+        "updated": "2024-03-18T07:22:53+00:00",
+        "opt_in_process": "double_opt_in"
+      },
+      "relationships": {
+        "profiles": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/lists/UQS6sM/relationships/profiles/",
+            "related": "https://a.klaviyo.com/api/lists/UQS6sM/profiles/"
+          }
+        },
+        "tags": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/lists/UQS6sM/relationships/tags/",
+            "related": "https://a.klaviyo.com/api/lists/UQS6sM/tags/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/lists/UQS6sM/"
+      }
+    },
+    {
+      "type": "list",
+      "id": "WBrr5G",
+      "attributes": {
+        "name": "THIS IS REQUIRED",
+        "created": "2024-03-18T21:05:05+00:00",
+        "updated": "2024-03-18T21:05:05+00:00",
+        "opt_in_process": "double_opt_in"
+      },
+      "relationships": {
+        "profiles": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/lists/WBrr5G/relationships/profiles/",
+            "related": "https://a.klaviyo.com/api/lists/WBrr5G/profiles/"
+          }
+        },
+        "tags": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/lists/WBrr5G/relationships/tags/",
+            "related": "https://a.klaviyo.com/api/lists/WBrr5G/tags/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/lists/WBrr5G/"
+      }
+    },
+    {
+      "type": "segment",
+      "id": "SenTvP",
+      "attributes": {
+        "name": "Engaged (30 Days)",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:45+00:00",
+        "is_active": true,
+        "is_processing": false,
+        "is_starred": false
+      },
+      "relationships": {
+        "profiles": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/segments/SenTvP/relationships/profiles/",
+            "related": "https://a.klaviyo.com/api/segments/SenTvP/profiles/"
+          }
+        },
+        "tags": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/segments/SenTvP/relationships/tags/",
+            "related": "https://a.klaviyo.com/api/segments/SenTvP/tags/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/segments/SenTvP/"
+      }
+    },
+    {
+      "type": "segment",
+      "id": "TpMJpF",
+      "attributes": {
+        "name": "Engaged (90 Days)",
+        "created": "2024-03-18T07:17:18+00:00",
+        "updated": "2024-03-18T07:17:45+00:00",
+        "is_active": true,
+        "is_processing": false,
+        "is_starred": false
+      },
+      "relationships": {
+        "profiles": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/segments/TpMJpF/relationships/profiles/",
+            "related": "https://a.klaviyo.com/api/segments/TpMJpF/profiles/"
+          }
+        },
+        "tags": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/segments/TpMJpF/relationships/tags/",
+            "related": "https://a.klaviyo.com/api/segments/TpMJpF/tags/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/segments/TpMJpF/"
+      }
+    },
+    {
+      "type": "segment",
+      "id": "VPeEwM",
+      "attributes": {
+        "name": "Engaged (60 Days)",
+        "created": "2024-03-18T07:17:17+00:00",
+        "updated": "2024-03-18T07:17:45+00:00",
+        "is_active": true,
+        "is_processing": false,
+        "is_starred": false
+      },
+      "relationships": {
+        "profiles": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/segments/VPeEwM/relationships/profiles/",
+            "related": "https://a.klaviyo.com/api/segments/VPeEwM/profiles/"
+          }
+        },
+        "tags": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/segments/VPeEwM/relationships/tags/",
+            "related": "https://a.klaviyo.com/api/segments/VPeEwM/tags/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/segments/VPeEwM/"
+      }
+    },
+    {
+      "type": "segment",
+      "id": "VTRUSb",
+      "attributes": {
+        "name": "New Subscribers",
+        "created": "2024-03-18T07:17:15+00:00",
+        "updated": "2024-03-18T07:17:45+00:00",
+        "is_active": true,
+        "is_processing": false,
+        "is_starred": false
+      },
+      "relationships": {
+        "profiles": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/segments/VTRUSb/relationships/profiles/",
+            "related": "https://a.klaviyo.com/api/segments/VTRUSb/profiles/"
+          }
+        },
+        "tags": {
+          "links": {
+            "self": "https://a.klaviyo.com/api/segments/VTRUSb/relationships/tags/",
+            "related": "https://a.klaviyo.com/api/segments/VTRUSb/tags/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/segments/VTRUSb/"
+      }
+    }
+  ]
+}

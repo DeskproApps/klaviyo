@@ -1,3 +1,4 @@
+import { get } from "lodash";
 import { Stack } from "@deskpro/deskpro-ui";
 import { DEFAULT_ERROR } from "../../constants";
 import { KlaviyoError } from "../../services/klaviyo";
@@ -10,12 +11,14 @@ type Props = Omit<FallbackProps, "error"> & {
 };
 
 const ErrorFallback: FC<Props> = ({ error }) => {
-  const message = DEFAULT_ERROR;
+  let message = DEFAULT_ERROR;
   let consoleMessage;
 
 
   if (error instanceof KlaviyoError) {
-    //..
+    message = get(error, ["data", "errors", 0, "detail"])
+      || get(error, ["data", "errors", 0, "title"])
+      || get(error, ["data", "errors", 0, "code"]);
   }
 
   // eslint-disable-next-line no-console

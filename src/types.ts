@@ -26,10 +26,10 @@ export type RequestParams = {
   settings?: Settings;
 };
 
-export type Request = <T>(
+export type Request = <Data, Include = undefined>(
   client: IDeskproClient,
   params: RequestParams,
-) => Response<T>;
+) => Response<Data, Include>;
 
 // V2ProxyRequestInit
 export type FetchOptions = Pick<RequestParams, "method"|"headers"> & V2ProxyRequestInitBody;
