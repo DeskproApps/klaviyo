@@ -1,5 +1,5 @@
 import { Search, HorizontalDivider } from "@deskpro/app-sdk";
-import { Container } from "../common";
+import { Container, Navigation } from "../common";
 import { Buttons, Profiles } from "./blocks";
 import type { FC, Dispatch } from "react";
 import type { Maybe } from "../../types";
@@ -12,6 +12,7 @@ export type Props = {
   selectedProfile: Maybe<Profile>;
   onCancel: () => void;
   onLinkProfile: () => void;
+  onNavigateToCreate: () => void;
   onChangeSearch: (search: string) => void;
   onChangeSelectedProfile: Dispatch<Maybe<Profile>>;
 };
@@ -24,11 +25,13 @@ const LinkProfile: FC<Props> = ({
   onLinkProfile,
   onChangeSearch,
   selectedProfile,
+  onNavigateToCreate,
   onChangeSelectedProfile,
 }) => {
   return (
     <>
       <Container>
+        <Navigation onNavigateToCreate={onNavigateToCreate}/>
         <Search isFetching={isLoading} onChange={onChangeSearch}/>
         <Buttons
           onCancel={onCancel}

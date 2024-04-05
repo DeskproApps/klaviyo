@@ -6,3 +6,5 @@ export { NoFound, NoFoundProfiles } from "./NoFound";
 export { Card } from "./Card";
 export { KlaviyoLogo } from "./KlaviyoLogo";
 export { DeskproTickets } from "./DeskproTickets";
+export { Navigation } from "./Navigation";
+export { Label } from "./Label";
