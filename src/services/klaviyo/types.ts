@@ -1,8 +1,9 @@
 import type { components } from "./schema";
 
-export type Response<T> = Promise<{
-  data: T,
+export type Response<Data, Include = undefined> = Promise<{
+  data: Data,
   links?: components["schemas"]["CollectionLinks"],
+  included?: Include,
 }>;
 
 export type APIError = {
@@ -11,8 +12,8 @@ export type APIError = {
   code: string;
   title: string;
   detail: string;
-  source: object;
-  meta: object;
+  source?: object;
+  meta?: object;
 };
 
 export type KlaviyoAPIError = {
@@ -22,3 +23,7 @@ export type KlaviyoAPIError = {
 export type Account = components["schemas"]["AccountResponseObjectResource"];
 
 export type Profile = components["schemas"]["ProfileResponseObjectResource"];
+
+export type List = components["schemas"]["ListResponseObjectResource"];
+
+export type Segment = components["schemas"]["SegmentResponseObjectResource"];

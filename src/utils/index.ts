@@ -7,3 +7,7 @@ export { getOptions } from "./getOptions";
 export { getError } from "./getError";
 export { getFilterString } from "./getFilterString";
 export { tryToLinkAutomatically } from "./tryToLinkAutomatically";
+export { getFullName } from "./getFullName";
+export { getExternalLink } from "./getExternalLink";
+export { isList } from "./isList";
+export { isSegment } from "./isSegment";

@@ -1,6 +1,6 @@
 import { useMemo, useCallback } from "react";
 import { Link, Title, Property, TwoProperties } from "@deskpro/app-sdk";
-import { nbsp } from "../../constants";
+import { getFullName, getExternalLink } from "../../utils";
 import { KlaviyoLogo, DeskproTickets } from "../common";
 import type { FC, MouseEvent } from "react";
 import type { Profile } from "../../services/klaviyo/types";
@@ -11,10 +11,8 @@ export type Props = {
 };
 
 const ProfileItem: FC<Props> = ({ profile, onClickTitle }) => {
-  const fullName = useMemo(() => [
-    profile.attributes.first_name,
-    profile.attributes.last_name
-  ].join(nbsp), [profile]);
+  const fullName = useMemo(() => getFullName(profile), [profile]);
+  const link = useMemo(() => getExternalLink.profile(profile.id), [profile]);
 
   const onClick = useCallback((e: MouseEvent) => {
     e.preventDefault();
@@ -29,8 +27,8 @@ const ProfileItem: FC<Props> = ({ profile, onClickTitle }) => {
           : (<Link href="#" onClick={onClick}>{fullName}</Link>)
         }
         marginBottom={10}
-        icon={<KlaviyoLogo/>}
-        link={`https://www.klaviyo.com/profile/${profile.id}`}
+        {...(!link ? {} : { icon: <KlaviyoLogo/> })}
+        {...(!link ? {} : { link })}
       />
       <TwoProperties
         leftLabel="Email"

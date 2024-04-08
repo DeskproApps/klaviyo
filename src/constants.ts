@@ -6,6 +6,8 @@ export const DATE_FORMAT = "dd MMM, yyyy";
 
 export const TIME_FORMAT = "H:mm";
 
+export const LOCALE = "en-GB";
+
 /** Deskpro */
 export const APP_PREFIX = "klaviyo";
 
@@ -18,6 +20,7 @@ export const placeholders = {
 };
 
 /** Klaviyo Pro */
+export const URL = "https://www.klaviyo.com";
 export const BASE_URL = "https://a.klaviyo.com/api";
 
 export const API_REVISION = "2024-02-15";
