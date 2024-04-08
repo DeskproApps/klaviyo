@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
 import { match } from "ts-pattern";
+import { ErrorBoundary } from "react-error-boundary";
 import {
   LoadingSpinner,
   useDeskproElements,
@@ -10,6 +11,7 @@ import {
 } from "@deskpro/app-sdk";
 import { useUnlinkProfile } from "./hooks";
 import { isNavigatePayload } from "./utils";
+import { ErrorFallback } from "./components";
 import {
   HomePage,
   LoadingAppPage,
@@ -54,7 +56,7 @@ const App: FC = () => {
   }
 
   return (
-    <>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
       <Routes>
         <Route path="/admin/verify_settings" element={<VerifySettingsPage/>} />
         <Route path="/home" element={<HomePage/>}/>
@@ -63,7 +65,7 @@ const App: FC = () => {
         <Route index element={<LoadingAppPage/>} />
       </Routes>
       {!isAdmin && (<><br/><br/><br/></>)}
-    </>
+    </ErrorBoundary>
   );
 };
 
