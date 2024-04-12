@@ -1,3 +1,4 @@
+import { get } from "lodash";
 import { z } from "zod";
 import { requiredFieldsValidator } from "./validators";
 import type { Maybe } from "../../types";
@@ -21,9 +22,9 @@ const validationSchema = z.object({
   });
 
 const getInitValues = (profile?: Maybe<Profile>) => ({
-  email: profile?.attributes?.email || "",
-  firstName: profile?.attributes.first_name || "",
-  lastName: profile?.attributes.last_name || "",
+  email: get(profile, ["attributes", "email"]) || "",
+  firstName: get(profile, ["attributes", "first_name"]) || "",
+  lastName: get(profile, ["attributes", "last_name"]) || "",
   phone: "",
   organization: "",
   title: "",
@@ -36,10 +37,10 @@ const getProfileValues = (data: FormValidationSchema): ProfileInput => {
       attributes: {
         ...(!data.email ? {} : { email: data.email }),
         ...(!data.phone ? {} : { phone_number: data.phone }),
-        first_name: data.firstName,
-        last_name: data.lastName,
-        organization: data.organization,
-        title: data.title,
+        first_name: data.firstName || "",
+        last_name: data.lastName || "",
+        organization: data.organization || "",
+        title: data.title || "",
       },
     },
   };

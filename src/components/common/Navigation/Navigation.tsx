@@ -4,7 +4,7 @@ import { TwoButtonGroup } from "@deskpro/app-sdk";
 import type { FC } from "react";
 import type { TwoButtonGroupProps } from "@deskpro/app-sdk";
 
-type Props = {
+export type Props = {
   onNavigateToLink?: TwoButtonGroupProps["twoOnClick"],
   onNavigateToCreate?: TwoButtonGroupProps["oneOnClick"],
 };
