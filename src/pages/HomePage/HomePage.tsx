@@ -9,6 +9,10 @@ const HomePage: FC = () => {
   useSetTitle("Klaviyo");
 
   useRegisterElements(({ registerElement }) => {
+    registerElement("edit", {
+      type: "edit_button",
+      payload: { type: "changePage", path: "/profiles/update" },
+    });
     registerElement("menu", {
       type: "menu",
       items: [{

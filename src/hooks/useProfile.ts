@@ -34,7 +34,7 @@ const useProfile: UseProfile = () => {
   );
 
   return {
-    isLoading: [profileIds, profile].some(({ isLoading }) => isLoading) && Boolean(profileId),
+    isLoading: [profileIds, profile].some(({ isLoading, isFetching }) => isLoading || isFetching) && Boolean(profileId),
     profile: get(profile, ["data", "data"], null),
     lists: get(profile, ["data", "included"], []) || [],
   };

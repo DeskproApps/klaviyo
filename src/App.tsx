@@ -17,6 +17,7 @@ import {
   LoadingAppPage,
   LinkProfilePage,
   CreateProfilePage,
+  UpdateProfilePage,
   VerifySettingsPage,
 } from "./pages";
 import type { FC } from "react";
@@ -62,6 +63,7 @@ const App: FC = () => {
         <Route path="/home" element={<HomePage/>}/>
         <Route path="/profiles/link" element={<LinkProfilePage/>} />
         <Route path="/profiles/create" element={<CreateProfilePage/>} />
+        <Route path="/profiles/update" element={<UpdateProfilePage/>} />
         <Route index element={<LoadingAppPage/>} />
       </Routes>
       {!isAdmin && (<><br/><br/><br/></>)}

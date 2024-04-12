@@ -1,5 +1,5 @@
 import { cleanup } from "@testing-library/react";
-import { render, mockUserContext } from "../../../../testing";
+import { render, mockUserContext, mockProfile } from "../../../../testing";
 import { ProfileForm } from "../ProfileForm";
 import type { Props } from "../types";
 
@@ -51,6 +51,42 @@ describe("ProfileForm", () => {
     expect(await findByText(/Title/i)).toBeInTheDocument();
     expect(titleField).toBeInTheDocument();
     expect(titleField.value).toBe("");
+  });
+
+  test("render updating form", async () => {
+    const { findByText, container } = renderProfileForm({
+      profile: mockProfile.data as never,
+    });
+
+    const emailField = container.querySelector("input[id=email]") as HTMLInputElement;
+    expect(await findByText(/Email/i)).toBeInTheDocument();
+    expect(emailField).toBeInTheDocument();
+    expect(emailField.value).toBe("ivan.vyhovsky@cossacks.org");
+
+    const phoneField = container.querySelector("input[id=phone]") as HTMLInputElement;
+    expect(await findByText(/Phone/i)).toBeInTheDocument();
+    expect(phoneField).toBeInTheDocument();
+    expect(phoneField.value).toBe("+441234567890");
+
+    const firstNameField = container.querySelector("input[id=firstName]") as HTMLInputElement;
+    expect(await findByText(/First name/i)).toBeInTheDocument();
+    expect(firstNameField).toBeInTheDocument();
+    expect(firstNameField.value).toBe("Ivan");
+
+    const lastNameNameField = container.querySelector("input[id=lastName]") as HTMLInputElement;
+    expect(await findByText(/Last name/i)).toBeInTheDocument();
+    expect(lastNameNameField).toBeInTheDocument();
+    expect(lastNameNameField.value).toBe("Vyhovsky");
+
+    const organizationField = container.querySelector("input[id=organization]") as HTMLInputElement;
+    expect(await findByText(/Organization/i)).toBeInTheDocument();
+    expect(organizationField).toBeInTheDocument();
+    expect(organizationField.value).toBe("Cossack Hetmanate");
+
+    const titleField = container.querySelector("input[id=title]") as HTMLInputElement;
+    expect(await findByText(/Title/i)).toBeInTheDocument();
+    expect(titleField).toBeInTheDocument();
+    expect(titleField.value).toBe("Hetman of Zaporizhian Host");
   });
 
   test("render creation form with info about dpUser", async () => {
