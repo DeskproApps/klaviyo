@@ -1,3 +1,4 @@
+import { isEmpty } from "lodash";
 import { LoadingSpinner } from "@deskpro/app-sdk";
 import { useSetTitle, useProfile, useRegisterElements } from "../../hooks";
 import { Home } from "../../components";
@@ -9,10 +10,6 @@ const HomePage: FC = () => {
   useSetTitle("Klaviyo");
 
   useRegisterElements(({ registerElement }) => {
-    registerElement("edit", {
-      type: "edit_button",
-      payload: { type: "changePage", path: "/profiles/update" },
-    });
     registerElement("menu", {
       type: "menu",
       items: [{
@@ -20,7 +17,13 @@ const HomePage: FC = () => {
         payload: { type: "unlink" },
       }],
     });
-  });
+    if (!isEmpty(profile)) {
+      registerElement("edit", {
+        type: "edit_button",
+        payload: { type: "changePage", path: "/profiles/update" },
+      });
+    }
+  }, [profile]);
 
   if (isLoading) {
     return (
