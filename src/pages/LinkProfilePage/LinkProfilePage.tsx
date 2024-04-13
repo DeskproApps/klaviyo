@@ -24,6 +24,8 @@ const LinkProfilePage: FC = () => {
 
   const onChangeSearch = useDebouncedCallback(setSearchQuery, 1000);
 
+  const onNavigateToCreate = useCallback(() => navigate("/profiles/create"), [navigate]);
+
   const onCancel = useCallback(() => navigate("/home"), [navigate]);
 
   const onLinkProfile = useCallback(() => {
@@ -42,7 +44,6 @@ const LinkProfilePage: FC = () => {
   useSetTitle("Link Profile");
 
   useRegisterElements(({ registerElement }) => {
-    registerElement("refresh", { type: "refresh_button" });
     registerElement("home", {
       type: "home_button",
       payload: { type: "changePage", path: "/home" },
@@ -58,6 +59,7 @@ const LinkProfilePage: FC = () => {
       onLinkProfile={onLinkProfile}
       onChangeSearch={onChangeSearch}
       selectedProfile={selectedProfile}
+      onNavigateToCreate={onNavigateToCreate}
       onChangeSelectedProfile={setSelectedProfile}
     />
   );

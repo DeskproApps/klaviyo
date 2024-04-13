@@ -37,7 +37,7 @@
     "whitelist": [
       {
         "url": "https://a.klaviyo.com/api/.*",
-        "methods": ["GET"],
+        "methods": ["GET", "POST"],
         "timeout": 20
       }
     ]

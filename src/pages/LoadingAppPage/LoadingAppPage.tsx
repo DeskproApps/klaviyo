@@ -5,6 +5,7 @@ import type { FC } from "react";
 
 const LoadingAppPage: FC = () => {
   useLoadingApp();
+
   useSetTitle();
 
   return (

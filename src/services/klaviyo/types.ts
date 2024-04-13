@@ -1,4 +1,4 @@
-import type { components } from "./schema";
+import type { components, paths } from "./schema";
 
 export type Response<Data, Include = undefined> = Promise<{
   data: Data,
@@ -27,3 +27,5 @@ export type Profile = components["schemas"]["ProfileResponseObjectResource"];
 export type List = components["schemas"]["ListResponseObjectResource"];
 
 export type Segment = components["schemas"]["SegmentResponseObjectResource"];
+
+export type ProfileInput = paths["/api/profiles/"]["post"]["requestBody"]["content"]["application/json"];
