@@ -21,19 +21,30 @@ describe("ProfileForm", () => {
         });
       });
 
-      test("should return profile values without phone", () => {
+      test("should return profile values without phone if it's new profile", () => {
         const values = cloneDeep(mockValues);
         values.phone = "";
-        expect(getProfileValues(values as never))
-          .toHaveProperty("data.attributes.email", "pylyp.orlyk@zaporizhian.org");
+        expect(getProfileValues(values as never)).toHaveProperty("data.attributes.email", "pylyp.orlyk@zaporizhian.org");
         expect(getProfileValues(values as never)).not.toHaveProperty("data.attributes.phone_number");
       });
 
-      test("should return profile values without email", () => {
+      test("should return profile values without email  if it's new profile", () => {
         const values = cloneDeep(mockValues);
         values.email = "";
         expect(getProfileValues(values as never)).toHaveProperty("data.attributes.phone_number", "+1234567891");
         expect(getProfileValues(values as never)).not.toHaveProperty("data.attributes.email");
+      });
+
+      test("should return profile values if it's update profile", () => {
+        const values = cloneDeep(mockValues);
+        values.phone = "";
+        values.email = "";
+        expect(getProfileValues(values as never, "100500")).toMatchObject({
+          data: {
+            id: "100500",
+            attributes: { email: "", phone_number: "" },
+          },
+        });
       });
 
       test.each([{}, [], "", 123, 0, false, true])("wrong value: %p", (value) => {

@@ -1,5 +1,5 @@
 import { getInitValues } from "../utils";
-import { mockUserContext } from "../../../../testing";
+import { mockUserContext, mockProfile } from "../../../../testing";
 
 describe("ProfileForm", () => {
   describe("utils", () => {
@@ -31,6 +31,17 @@ describe("ProfileForm", () => {
           phone: "",
           organization: "",
           title: ""
+        });
+      });
+
+      test("should return init profile values", () => {
+        expect(getInitValues(mockProfile.data as never)).toStrictEqual({
+          email: "ivan.vyhovsky@cossacks.org",
+          firstName: "Ivan",
+          lastName: "Vyhovsky",
+          phone: "+441234567890",
+          organization: "Cossack Hetmanate",
+          title: "Hetman of Zaporizhian Host"
         });
       });
 

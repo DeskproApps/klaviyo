@@ -14,7 +14,7 @@ export type Option<Value = unknown> = Omit<DropdownValueType<Value>, "subItems">
 export type DateTime = string;
 
 /** Request types */
-export type ApiRequestMethod = "GET" | "POST";
+export type ApiRequestMethod = "GET" | "POST" | "PATCH";
 
 export type RequestParams = {
   url?: string;

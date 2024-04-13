@@ -6,7 +6,6 @@ import { useSetTitle, useRegisterElements } from "../../hooks";
 import { setEntityService } from "../../services/deskpro";
 import { createProfileService } from "../../services/klaviyo";
 import { getError } from "../../utils";
-import { DEFAULT_ERROR } from "../../constants";
 import { getProfileValues } from "../../components/ProfileForm";
 import { CreateProfile } from "../../components";
 import type { FC } from "react";
@@ -53,7 +52,7 @@ const CreateProfilePage: FC = () => {
           : setEntityService(client, dpUserId, profileId);
       })
       .then(() => navigate("/home"))
-      .catch((err) => setError(getError(err, DEFAULT_ERROR)));
+      .catch((err) => setError(getError(err)));
   }, [client, navigate, dpUserId]);
 
   useSetTitle("Link Profile");

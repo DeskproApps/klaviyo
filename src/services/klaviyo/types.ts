@@ -29,3 +29,5 @@ export type List = components["schemas"]["ListResponseObjectResource"];
 export type Segment = components["schemas"]["SegmentResponseObjectResource"];
 
 export type ProfileInput = paths["/api/profiles/"]["post"]["requestBody"]["content"]["application/json"];
+
+export type ProfileUpdateInput = paths["/api/profiles/{id}/"]["patch"]["requestBody"]["content"]["application/json"];
