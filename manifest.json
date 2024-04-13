@@ -1,12 +1,11 @@
 {
   "name": "@deskpro-apps/klaviyo",
   "title": "Klaviyo",
-  "description": "",
+  "description": "Integrate with Klaviyo to manage your customers' personalized experiences across email, SMS, mobile push, and more",
   "version": "0.0.5",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
-  "appStoreUrl": "https://www.deskpro.com/product-embed/apps/klaviyo",
   "serveUrl": "https://apps-cdn.deskpro-service.com/__name__/__version__",
   "targets": [{ "target": "user_sidebar", "entrypoint": "index.html" }],
   "entityAssociations": {
