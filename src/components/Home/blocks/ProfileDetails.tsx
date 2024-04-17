@@ -1,6 +1,7 @@
 import { useMemo } from "react";
+import { get } from "lodash";
 import { Title, Property } from "@deskpro/app-sdk";
-import { getFullName, getExternalLink } from "../../../utils";
+import { getFullName, getExternalLink, getLocation } from "../../../utils";
 import { KlaviyoLogo, DeskproTickets } from "../../common";
 import type { FC } from "react";
 import type { Profile } from "../../../services/klaviyo/types";
@@ -18,6 +19,10 @@ const ProfileDetails: FC<Props> = ({ profile }) => {
         title={getFullName(profile)}
         {...(!link ? {} : { icon: <KlaviyoLogo/> })}
         {...(!link ? {} : { link })}
+      />
+      <Property
+        label="Unique ID"
+        text={profile.id}
       />
       <Property
         label="Email"
@@ -38,6 +43,10 @@ const ProfileDetails: FC<Props> = ({ profile }) => {
       <Property
         label="Deskpro Tickets"
         text={<DeskproTickets entityId={profile.id}/>}
+      />
+      <Property
+        label="Location"
+        text={getLocation(get(profile, ["attributes", "location"]))}
       />
     </>
   );
