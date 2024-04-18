@@ -15,7 +15,9 @@ Give the API key a name - this can be anything, something like "Deskpro App" wil
 
 For the __Access Level__, select __"Custom Key"__ and choose the following scopes:
 * Account: __read__;
+* Events: __read__;
 * List: __read__;
+* Metrics: __read__;
 * Profiles: __full access__;
 * Segments: __read__.
 

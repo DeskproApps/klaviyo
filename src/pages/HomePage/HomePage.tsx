@@ -5,7 +5,7 @@ import { Home } from "../../components";
 import type { FC } from "react";
 
 const HomePage: FC = () => {
-  const { isLoading, profile, lists } = useProfile();
+  const { isLoading, profile, lists, campaigns } = useProfile();
 
   useSetTitle("Klaviyo");
 
@@ -32,7 +32,11 @@ const HomePage: FC = () => {
   }
 
   return (
-    <Home profile={profile} lists={lists} />
+    <Home
+      profile={profile}
+      lists={lists}
+      campaigns={campaigns}
+    />
   );
 };
 

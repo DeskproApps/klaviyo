@@ -1,0 +1,112 @@
+{
+  "data": [
+    {
+      "type": "event",
+      "id": "59YqydF2tfZ",
+      "attributes": {
+        "timestamp": 1713479035,
+        "event_properties": {
+          "Subject": "news news news",
+          "Email Domain": "cossacks.org",
+          "$message": "01HVSMHW5Q5CHZA2RCM67SX3PA",
+          "Campaign Name": "New one compaign",
+          "$_cohort$message_send_cohort": "1713478735:01HVSMHW5Q5CHZA2RCM67SX3PA",
+          "Bounce Type": "Soft",
+          "$ESP": 0,
+          "$group_ids": [
+            "Sj29Rd"
+          ],
+          "Inbox Provider": "Other",
+          "$klaviyo_bounce_category": "External Error",
+          "$event_id": "01HVSMHW5Q5CHZA2RCM67SX3PA:22752149341171250926298782845735293817:1713479035",
+          "$extra": {
+            "$bounce_delivery_info": {
+              "add_exclusion": true,
+              "ip": null,
+              "is_autoresponder": false,
+              "type": "blocked",
+              "action_id": null,
+              "code": "4.5.0",
+              "reason": "unable to get mx info: failed to get IPs from PTR record: lookup <nil>: unrecognized address"
+            }
+          }
+        },
+        "datetime": "2024-04-18T22:23:55+00:00",
+        "uuid": "579e0f80-fdd2-11ee-8001-e237dd933bc2"
+      },
+      "relationships": {
+        "profile": {
+          "data": {
+            "type": "profile",
+            "id": "01HS8726W0GXBV5N8HRZE9DCWN"
+          },
+          "links": {
+            "self": "https://a.klaviyo.com/api/events/59YqydF2tfZ/relationships/profile/",
+            "related": "https://a.klaviyo.com/api/events/59YqydF2tfZ/profile/"
+          }
+        },
+        "metric": {
+          "data": {
+            "type": "metric",
+            "id": "WBwdQc"
+          },
+          "links": {
+            "self": "https://a.klaviyo.com/api/events/59YqydF2tfZ/relationships/metric/",
+            "related": "https://a.klaviyo.com/api/events/59YqydF2tfZ/metric/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/events/59YqydF2tfZ/"
+      }
+    },
+    {
+      "type": "event",
+      "id": "55myhcKNYDL",
+      "attributes": {
+        "timestamp": 1710746574,
+        "event_properties": {
+          "$message": "01HS8727JB6EW3K6MD24R7NTVG",
+          "Campaign Name": "Internal Klaviyo - Test Campaign Name",
+          "Email Domain": "klaviyo-demo.com",
+          "Subject": "Internal Klaviyo - Subject Line",
+          "_ip": "166.137.246.54",
+          "Bounce Type": "Hard",
+          "$event_id": "sample_data_gen:dd947873-a447-4a05-b1f6-09ddcc742883"
+        },
+        "datetime": "2024-03-18T07:22:54+00:00",
+        "uuid": "55f1db00-e4f8-11ee-8001-5beec055df92"
+      },
+      "relationships": {
+        "profile": {
+          "data": {
+            "type": "profile",
+            "id": "01HS8726W0GXBV5N8HRZE9DCWN"
+          },
+          "links": {
+            "self": "https://a.klaviyo.com/api/events/55myhcKNYDL/relationships/profile/",
+            "related": "https://a.klaviyo.com/api/events/55myhcKNYDL/profile/"
+          }
+        },
+        "metric": {
+          "data": {
+            "type": "metric",
+            "id": "WBwdQc"
+          },
+          "links": {
+            "self": "https://a.klaviyo.com/api/events/55myhcKNYDL/relationships/metric/",
+            "related": "https://a.klaviyo.com/api/events/55myhcKNYDL/metric/"
+          }
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/events/55myhcKNYDL/"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://a.klaviyo.com/api/events?filter=and%28equals%28profile_id%2C%2201HS8726W0GXBV5N8HRZE9DCWN%22%29%2Cequals%28metric_id%2C%22WBwdQc%22%29%29",
+    "next": null,
+    "prev": null
+  }
+}

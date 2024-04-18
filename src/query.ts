@@ -15,6 +15,9 @@ const queryClient = new QueryClient({
 const QueryKey = {
   SEARCH: "search",
   LINKED_PROFILE: "linked-profile",
+  PROFILE: "profile",
+  METRICS: "metrics",
+  EVENTS: "events",
 }
 
 export { queryClient, QueryKey };
