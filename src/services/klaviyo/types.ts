@@ -31,3 +31,19 @@ export type Segment = components["schemas"]["SegmentResponseObjectResource"];
 export type ProfileInput = paths["/api/profiles/"]["post"]["requestBody"]["content"]["application/json"];
 
 export type ProfileUpdateInput = paths["/api/profiles/{id}/"]["patch"]["requestBody"]["content"]["application/json"];
+
+export type Metric = components["schemas"]["MetricResponseObjectResource"];
+
+// @see https://developers.klaviyo.com/en/reference/metrics_api_overview#query-metrics
+export type MetricType =
+  | "Klaviyo" // Klaviyo
+  | "API"     // API
+  | string    // Shopify, PrestaShop, BigCommerce or other core integrations
+;
+
+export type Event = components["schemas"]["EventResponseObjectResource"];
+
+export type PseudoCampaign = {
+  campaignName: string;
+  subject: string;
+};

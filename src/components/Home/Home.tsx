@@ -1,16 +1,17 @@
 import { HorizontalDivider } from "@deskpro/app-sdk";
 import { Container, NoFound } from "../common";
-import { ProfileDetails, Lists } from "./blocks";
+import { ProfileDetails, Lists, Campaigns } from "./blocks";
 import { FC } from "react";
 import type { Maybe } from "../../types";
-import type { Profile, List, Segment } from "../../services/klaviyo/types";
+import type { Profile, List, Segment, PseudoCampaign } from "../../services/klaviyo/types";
 
 type Props = {
   profile: Maybe<Profile>;
   lists: (List|Segment)[];
+  campaigns: PseudoCampaign[];
 };
 
-const Home: FC<Props> = ({ profile, lists }) => {
+const Home: FC<Props> = ({ profile, lists, campaigns }) => {
   if (!profile) {
     return (
       <Container>
@@ -23,6 +24,12 @@ const Home: FC<Props> = ({ profile, lists }) => {
     <>
       <Container>
         <ProfileDetails profile={profile}/>
+      </Container>
+
+      <HorizontalDivider/>
+
+      <Container>
+        <Campaigns campaigns={campaigns}/>
       </Container>
 
       <HorizontalDivider/>

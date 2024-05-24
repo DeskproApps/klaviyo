@@ -7,7 +7,7 @@ import { DeskproAppProvider, LoadingSpinner } from "@deskpro/app-sdk";
 import { queryClient } from "./query";
 import { App } from "./App";
 import { ErrorFallback } from "./components";
-
+import "iframe-resizer/js/iframeResizer.contentWindow.js";
 import "@deskpro/deskpro-ui/dist/deskpro-ui.css";
 import "@deskpro/deskpro-ui/dist/deskpro-custom-icons.css";
 

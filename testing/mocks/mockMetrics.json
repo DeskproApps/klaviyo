@@ -1,0 +1,332 @@
+{
+  "data": [
+    {
+      "type": "metric",
+      "id": "R4Y4BX",
+      "attributes": {
+        "name": "Unsubscribed from SMS Marketing",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:16+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/R4Y4BX/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "RFZ7eA",
+      "attributes": {
+        "name": "Received SMS",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:16+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/RFZ7eA/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "ReeziK",
+      "attributes": {
+        "name": "Clicked Email",
+        "created": "2024-03-18T07:17:13+00:00",
+        "updated": "2024-03-18T07:17:13+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/ReeziK/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "Rq7zPi",
+      "attributes": {
+        "name": "Manually Unsuppressed from Email Marketing",
+        "created": "2024-03-18T09:18:03+00:00",
+        "updated": "2024-03-18T09:18:03+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/Rq7zPi/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "SRpW8s",
+      "attributes": {
+        "name": "Subscribed to SMS Marketing",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:16+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/SRpW8s/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "T2EsPe",
+      "attributes": {
+        "name": "Clicked email to unsubscribe",
+        "created": "2024-03-18T07:17:13+00:00",
+        "updated": "2024-03-29T19:17:33+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/T2EsPe/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "TuqYK5",
+      "attributes": {
+        "name": "Clicked SMS",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:16+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/TuqYK5/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "UDPPCV",
+      "attributes": {
+        "name": "Sent SMS",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:16+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/UDPPCV/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "UP6kjH",
+      "attributes": {
+        "name": "Marked Email as Spam",
+        "created": "2024-03-18T07:17:13+00:00",
+        "updated": "2024-03-18T07:17:13+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/UP6kjH/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "Ua5xjY",
+      "attributes": {
+        "name": "Manually Suppressed from Email Marketing",
+        "created": "2024-03-18T09:17:43+00:00",
+        "updated": "2024-03-18T09:17:43+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/Ua5xjY/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "VgQSfy",
+      "attributes": {
+        "name": "Failed to Deliver SMS",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:16+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/VgQSfy/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "Vs7nWk",
+      "attributes": {
+        "name": "Received Email",
+        "created": "2024-03-18T07:17:13+00:00",
+        "updated": "2024-03-18T07:17:13+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/Vs7nWk/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "WBwdQc",
+      "attributes": {
+        "name": "Bounced Email",
+        "created": "2024-03-18T07:17:13+00:00",
+        "updated": "2024-03-18T07:17:13+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/WBwdQc/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "WsfH9q",
+      "attributes": {
+        "name": "Received Automated Response SMS",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:16+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/WsfH9q/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "XexgsP",
+      "attributes": {
+        "name": "Opened Email",
+        "created": "2024-03-18T07:17:13+00:00",
+        "updated": "2024-03-18T07:17:13+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/XexgsP/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "YeFADT",
+      "attributes": {
+        "name": "Failed to Deliver Automated Response SMS",
+        "created": "2024-03-18T07:17:16+00:00",
+        "updated": "2024-03-18T07:17:16+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/YeFADT/"
+      }
+    },
+    {
+      "type": "metric",
+      "id": "YpW7kF",
+      "attributes": {
+        "name": "Dropped Email",
+        "created": "2024-03-18T07:17:13+00:00",
+        "updated": "2024-03-18T07:17:13+00:00",
+        "integration": {
+          "object": "integration",
+          "id": "0rG4eQ",
+          "key": "klaviyo",
+          "name": "Klaviyo",
+          "category": "Internal"
+        }
+      },
+      "links": {
+        "self": "https://a.klaviyo.com/api/metrics/YpW7kF/"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://a.klaviyo.com/api/metrics?filter=equals%28integration.name%2C%22Klaviyo%22%29",
+    "next": null,
+    "prev": null
+  }
+}

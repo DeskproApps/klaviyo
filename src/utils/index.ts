@@ -11,3 +11,6 @@ export { getFullName } from "./getFullName";
 export { getExternalLink } from "./getExternalLink";
 export { isList } from "./isList";
 export { isSegment } from "./isSegment";
+export { getLocation } from "./getLocation";
+export { isEmailMetric } from "./isEmailMetric";
+export { getCampaignsFromEvents } from "./getCampaignsFromEvents";
