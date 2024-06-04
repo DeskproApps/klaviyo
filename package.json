@@ -16,12 +16,11 @@
     "build:types": "npx openapi-typescript https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable.json -o ./src/services/klaviyo/schema.d.ts"
   },
   "dependencies": {
-    "@deskpro/app-sdk": "3.0.15",
+    "@deskpro/app-sdk": "3.0.20",
     "@deskpro/deskpro-ui": "^7.18.4",
     "@heroicons/react": "1.0.6",
     "@hookform/resolvers": "^3.3.4",
     "@tanstack/react-query": "^4.36.1",
-    "iframe-resizer": "^4.3.11",
     "lodash": "^4.17.21",
     "polished": "^4.3.0",
     "react": "^18.2.0",
