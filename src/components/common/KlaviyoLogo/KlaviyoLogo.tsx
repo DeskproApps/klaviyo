@@ -1,12 +1,10 @@
 import type { FC } from "react";
 
 const KlaviyoLogo: FC = () => (
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 67.8 45.4">
-    <g>
-      <path fill="#232426" d="M67.8,45.4H0V0h67.8L53.6,22.7L67.8,45.4L67.8,45.4z"/>
-    </g>
+  <svg width="144" height="144" viewBox="0 0 144 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="144" height="144" rx="21.6" fill="#232426"/>
+    <path d="M108 46.8H36V96.1033H108L93.7941 71.4577L108 46.8Z" fill="#FFFAF3"/>
   </svg>
-
 );
 
 export { KlaviyoLogo };
