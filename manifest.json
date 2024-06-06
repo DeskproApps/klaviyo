@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/klaviyo",
   "title": "Klaviyo",
   "description": "Integrate with Klaviyo to manage your customers' personalized experiences across email, SMS, mobile push, and more",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
