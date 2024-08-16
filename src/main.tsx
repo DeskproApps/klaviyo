@@ -9,6 +9,7 @@ import { App } from "./App";
 import { ErrorFallback } from "./components";
 import "@deskpro/deskpro-ui/dist/deskpro-ui.css";
 import "@deskpro/deskpro-ui/dist/deskpro-custom-icons.css";
+import "iframe-resizer/js/iframeResizer.contentWindow.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render((
