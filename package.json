@@ -16,7 +16,7 @@
     "build:types": "npx openapi-typescript https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable.json -o ./src/services/klaviyo/schema.d.ts"
   },
   "dependencies": {
-    "@deskpro/app-sdk": "4.1.5",
+    "@deskpro/app-sdk": "5.1.1",
     "@deskpro/deskpro-ui": "^8.2.0",
     "@heroicons/react": "1.0.6",
     "@hookform/resolvers": "^3.9.1",
