@@ -28,12 +28,12 @@ const useUnlinkProfile: UseUnlinkProfile = () => {
 
     setIsLoading(true);
 
-    return getEntityListService(client, dpUserId)
+    return getEntityListService(client, dpUserId ?? "")
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .then<any>((profileIds) => {
         return isEmpty(profileIds)
           ? Promise.resolve()
-          : Promise.all(profileIds.map((entityId) => deleteEntityService(client, dpUserId, entityId)));
+          : Promise.all(profileIds.map((entityId) => deleteEntityService(client, dpUserId ?? "", entityId)));
       })
       .then(() => navigate("/profiles/link"))
       .catch(asyncErrorHandler)
