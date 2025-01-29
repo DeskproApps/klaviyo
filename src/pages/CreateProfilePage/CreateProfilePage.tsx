@@ -49,7 +49,7 @@ const CreateProfilePage: FC = () => {
 
         return !profileId
           ? Promise.resolve()
-          : setEntityService(client, dpUserId, profileId);
+          : setEntityService(client, dpUserId?? "", profileId);
       })
       .then(() => navigate("/home"))
       .catch((err) => setError(getError(err)));

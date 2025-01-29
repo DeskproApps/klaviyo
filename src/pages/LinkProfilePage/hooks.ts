@@ -1,4 +1,3 @@
-import { get } from "lodash";
 import { useQueryWithClient } from "@deskpro/app-sdk";
 import { getProfilesService } from "../../services/klaviyo";
 import { QueryKey } from "../../query";
@@ -18,7 +17,7 @@ const useSearch: UseSearch = (q) => {
 
   return {
     isLoading: [profiles].some(({ isLoading }) => isLoading) && Boolean(q),
-    profiles: get(profiles, ["data", "data"] || []) || [],
+    profiles: profiles.data?.data ?? [],
   };
 };
 

@@ -1,4 +1,4 @@
-import { map, get, isEmpty } from "lodash";
+import { map, isEmpty } from "lodash";
 import type { Event } from "../services/klaviyo/types";
 
 const getCampaignsFromEvents = (events?: Event[]) => {
@@ -7,8 +7,8 @@ const getCampaignsFromEvents = (events?: Event[]) => {
   }
 
   return map(events, (event) => ({
-    campaignName: get(event, ["attributes", "event_properties", "Campaign Name"]),
-    subject: get(event, ["attributes", "event_properties", "Subject"]),
+    campaignName: String(event.attributes.event_properties?.["Campaign Name"] ?? ""),
+    subject: String(event.attributes.event_properties?.["Subject"] ?? ""),
   }));
 };
 
