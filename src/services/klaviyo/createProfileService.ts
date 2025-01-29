@@ -9,7 +9,7 @@ const createProfileService = (
   return baseRequest<Profile>(client, {
     url: `/profiles`,
     method: "POST",
-    data,
+    data: JSON.stringify(data),
   });
 };
 

@@ -7,10 +7,11 @@ const updateProfileService = (
   profileId: Profile["id"],
   data: ProfileUpdateInput
 ) => {
+  data
   return baseRequest<Profile>(client, {
     url: `/profiles/${profileId}`,
     method: "PATCH",
-    data,
+    data: JSON.stringify(data),
   });
 };
 
