@@ -5,13 +5,13 @@ import { getAccountsService, KlaviyoError } from "../../services/klaviyo";
 import { getError } from "../../utils";
 import { VerifySettings } from "../../components";
 import type { FC } from "react";
-import type { Maybe, Settings } from "../../types";
+import type { Maybe, PreInstalledSettings } from "../../types";
 import type { Account } from "../../services/klaviyo/types";
 
 const VerifySettingsPage: FC = () => {
   const { client } = useDeskproAppClient();
   const [accounts, setAccounts] = useState<Maybe<Account[]>>(null);
-  const [settings, setSettings] = useState<Settings>({});
+  const [settings, setSettings] = useState<PreInstalledSettings>({});
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Maybe<string>>(null);
   const errorMessage = "Failed to connect to Klaviyo, settings seem to be invalid";
@@ -27,7 +27,7 @@ const VerifySettingsPage: FC = () => {
 
     return getAccountsService(client, settings)
       .then((res) => setAccounts(get(res, ["data"])))
-      .catch((err: KlaviyoError) => setError(getError(err,errorMessage)))
+      .catch((err: KlaviyoError) => setError(getError(err, errorMessage)))
       .finally(() => setIsLoading(false));
   }, [client, settings, errorMessage]);
 

@@ -20,10 +20,10 @@ export type RequestParams = {
   url?: string;
   rawUrl?: string;
   method?: ApiRequestMethod;
-  data?: Dict<string>|RequestInit["body"];
+  data?: Dict<string> | RequestInit["body"];
   headers?: Dict<string>;
-  queryParams?: string|Dict<string>|ParamKeyValuePair[];
-  settings?: Settings;
+  queryParams?: string | Dict<string> | ParamKeyValuePair[];
+  settings?: PreInstalledSettings;
 };
 
 export type Request = <Data, Include = undefined>(
@@ -32,8 +32,12 @@ export type Request = <Data, Include = undefined>(
 ) => Response<Data, Include>;
 
 /** Deskpro types */
+export type PreInstalledSettings = Settings & { api_key?: string }
+
 export type Settings = {
-  api_key?: string;
+  client_id?: string,
+  use_deskpro_saas?: boolean,
+  use_access_token?: boolean,
 };
 
 export type DPUser = {
@@ -66,4 +70,4 @@ export type UnlinkPayload = { type: "unlink" };
 export type EventPayload =
   | NavigateToChangePage
   | UnlinkPayload
-;
+  ;

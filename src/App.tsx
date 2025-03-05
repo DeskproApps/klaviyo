@@ -1,26 +1,14 @@
+import { AdminCallbackPage, CreateProfilePage, HomePage, LinkProfilePage, LoadingAppPage, UpdateProfilePage, VerifySettingsPage } from "./pages";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "./components";
+import { isNavigatePayload } from "./utils";
+import { LoadingSpinner, useDeskproAppClient, useDeskproAppEvents, useDeskproElements } from "@deskpro/app-sdk";
+import { match } from "ts-pattern";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
-import { match } from "ts-pattern";
-import { ErrorBoundary } from "react-error-boundary";
-import {
-  LoadingSpinner,
-  useDeskproElements,
-  useDeskproAppClient,
-  useDeskproAppEvents,
-} from "@deskpro/app-sdk";
 import { useUnlinkProfile } from "./hooks";
-import { isNavigatePayload } from "./utils";
-import { ErrorFallback } from "./components";
-import {
-  HomePage,
-  LoadingAppPage,
-  LinkProfilePage,
-  CreateProfilePage,
-  UpdateProfilePage,
-  VerifySettingsPage,
-} from "./pages";
-import type { FC } from "react";
 import type { EventPayload } from "./types";
+import type { FC } from "react";
 
 const App: FC = () => {
   const navigate = useNavigate();
@@ -49,19 +37,20 @@ const App: FC = () => {
 
   if (!client || isLoading) {
     return (
-      <LoadingSpinner/>
+      <LoadingSpinner />
     );
   }
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <Routes>
-        <Route path="/admin/verify_settings" element={<VerifySettingsPage/>} />
-        <Route path="/home" element={<HomePage/>}/>
-        <Route path="/profiles/link" element={<LinkProfilePage/>} />
-        <Route path="/profiles/create" element={<CreateProfilePage/>} />
-        <Route path="/profiles/update" element={<UpdateProfilePage/>} />
-        <Route index element={<LoadingAppPage/>} />
+        <Route path="/admin/verify_settings" element={<VerifySettingsPage />} />
+        <Route path="/admin/callback" element={<AdminCallbackPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/profiles/link" element={<LinkProfilePage />} />
+        <Route path="/profiles/create" element={<CreateProfilePage />} />
+        <Route path="/profiles/update" element={<UpdateProfilePage />} />
+        <Route index element={<LoadingAppPage />} />
       </Routes>
     </ErrorBoundary>
   );

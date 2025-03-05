@@ -7,8 +7,14 @@
   "isSingleInstall": false,
   "hasDevMode": true,
   "serveUrl": "https://apps-cdn.deskpro-service.com/__name__/__version__",
+  "secrets": "ufUnH2jR//zNLph11mFftPLBrS3y5kw2F8RH6XgYxV6wRY4JsVimFWK9tfmTdt7WiBDTEFwiRkefRmhFCccWF2ChW5Deyq4L0qT/u7Xk7bVumKbX2meijGcrChzVLvtVuIq996WxMHUr+IPEWYcva0xj8vgsUvJCrZJaDFxqovK5mTRYQ70B3t9lsJl4s80E5AimASpUdZcwEeXRWmWWKEUw0bsk5RVEumD1kTHsIOuEhEPbGc+pB4TSNi8U5n9BrgQA1oBUnhq12QxtD75Le0mQmkBk0ocVY61VevglzKaed9ZRzQddt4Rf70dqFWeSiaY3G7L6iJbtfiwQunlxJrfmULoHb7vIsEkxwSuKzhho0cNQ9vomWJHDMbehh3ExRj5+uLk2y0b0AT2xC/4CI6usDZoYndcZtbTQ8BRMjEIARh7v5pAoFMPyLEUrKiEDtxrRsRRpmIONsvIoBqVn8yLSnHj0z5WoGnBOHmenT/JU1qHObZmbvhC1rw7PQjxwT0l72lDZCaoy6fz05r8Dxe+A3RySpFO77Tl/uyjF6AHW+qWJ+HZ8qOFQcHGoudSU1xgMgJJU7xVUhxNJPk+SZ6OdlPUQj8LzxTUNNJjnscnmPQlvHWC/rKnsn61sJa6sn69s1gukPAuvJB/+STYLtkTEuO6Zz6VKlh5pPAeTuoKDxns4ZJyuz7LwznK+w5/uZhw2e0Mie20YCdIxR0FLkK6bDEanJBuRXiHaKF0Q4ZqNcWQk5k/H9Xf8VzF2H9J9iH/pkNnStU+Ihc0bXb0XNHH8nnysTo/3b3oRF9VjXy1+6l2uOIo1NliZi5Fw8bmq5Bmk91+HBT7a5O6zaNGWoGK+0tqDDFuEd+N+8pcCk8zKzkyL//a8c55avLSGuXOXaI6YY0AqmW5wtrfuYXzy0GaImtk/vWEXkJho0Xy/P20MplLnE7IfUC9GgIdXFsCw1KHxsba6XqrPcKvDN2zLEs/v9im5M1G5zeQlpU1dlN5dor1w0Pc26APDSbXHB5OfTsh2WQYnXyS5mktC/sQXakUwqreUOIBHQcCbLC1JdeVUPGK0mgiECrVKzHS1xXoQRzsVDOQEA3796cBy1spgsjJ9BzuewdA9u/qS6JaHiyXXnQydHgpodXR1wcIPW2mthRN921bo+9c7b4gcoArW3w==",
   "appStoreUrl": "https://www.deskpro.com/product-embed/apps/klaviyo",
-  "targets": [{ "target": "user_sidebar", "entrypoint": "index.html" }],
+  "targets": [
+    {
+      "target": "user_sidebar",
+      "entrypoint": "index.html"
+    }
+  ],
   "entityAssociations": {
     "linkedKlaviyoProfiles": {
       "entity": "person",
@@ -17,27 +23,80 @@
     }
   },
   "settings": {
+    "use_deskpro_saas": {
+      "title": "One-Click Installation",
+      "type": "boolean",
+      "default": true,
+      "isRequired": false,
+      "isBackendOnly": false,
+      "order": 5
+    },
+    "use_api_key": {
+      "title": "Use API Token",
+      "type": "boolean",
+      "isRequired": false,
+      "isBackendOnly": false,
+      "default": false,
+      "condition": "settings.use_deskpro_saas != true",
+      "order": 10
+    },
     "api_key": {
       "title": "API Key",
       "type": "string",
-      "isRequired": true,
+      "isRequired": false,
       "isBackendOnly": true,
-      "order": 10
+      "condition": "settings.use_deskpro_saas != true && settings.use_api_key == true",
+      "order": 20
     },
     "verify_settings": {
       "title": "",
       "type": "app_embedded",
-      "options": { "entrypoint": "#/admin/verify_settings" },
+      "options": {
+        "entrypoint": "#/admin/verify_settings",
+        "height": "30px"
+      },
       "isRequired": false,
       "isBackendOnly": true,
-      "order": 20
+      "condition": "settings.use_deskpro_saas != true && settings.use_api_key == true",
+      "order": 30
+    },
+    "client_id": {
+      "title": "Client ID",
+      "type": "string",
+      "isRequired": false,
+      "isBackendOnly": false,
+      "condition": "settings.use_deskpro_saas != true && settings.use_api_key != true",
+      "order": 40
+    },
+    "client_secret": {
+      "title": "Client Secret",
+      "type": "string",
+      "isRequired": false,
+      "isBackendOnly": true,
+      "condition": "settings.use_deskpro_saas != true && settings.use_api_key != true",
+      "order": 50
+    },
+    "callback_url": {
+      "title": "Callback URL",
+      "type": "app_embedded",
+      "options": {
+        "entrypoint": "#/admin/callback"
+      },
+      "isRequired": false,
+      "isBackendOnly": true,
+      "condition": "settings.use_deskpro_saas != true && settings.use_api_key != true",
+      "order": 60
     }
   },
   "proxy": {
     "whitelist": [
       {
         "url": "https://a.klaviyo.com/api/.*",
-        "methods": ["GET", "POST", "PATCH"],
+        "methods": [
+          "GET",
+          "POST",
+          "PATCH"
+        ],
         "timeout": 20
       }
     ]
