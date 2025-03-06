@@ -58,11 +58,10 @@ const LoadingAppPage: FC = () => {
 
   if (isAuthenticated) {
     // Link the user or navigate to the link page
-    getAccountsService(client)
-      .then(() => tryToLinkAutomatically(client, user))
+    tryToLinkAutomatically(client, user)
       .then(() => getEntityListService(client, user.id))
       .then((entityIds) => navigate(entityIds.length > 0 ? "/home" : "/profiles/link"))
-      .catch(() => { })
+      .catch(() => { navigate("/profiles/link") })
   } else {
 
     if (isUsingOAuth) {
@@ -70,7 +69,7 @@ const LoadingAppPage: FC = () => {
     } else {
       // Show error for invalid access tokens (expired or not present)
       return (
-        <div style={{width: "100%", padding: 12, boxSizing: "border-box"}} >
+        <div style={{ width: "100%", padding: 12, boxSizing: "border-box" }} >
           <ErrorBlock text={"Invalid Access Token"} />
         </div>
       )
