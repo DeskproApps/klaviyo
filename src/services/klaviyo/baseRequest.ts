@@ -19,12 +19,15 @@ const baseRequest: Request = async (client, {
   const params = getQueryParams(queryParams);
   const body = getRequestBody(data);
 
-  const requestUrl = `${baseUrl}${isEmpty(params) ? "": `?${params}`}`;
+  const isUsingOAuth2 = (await client.getUserState<boolean>("isUsingOAuth"))[0]?.data
+
+
+  const requestUrl = `${baseUrl}${isEmpty(params) ? "" : `?${params}`}`;
   const options: RequestInit = {
     method,
     body,
     headers: {
-      "Authorization": `Klaviyo-API-Key ${settings?.api_key || placeholders.API_KEY}`,
+      "Authorization": isUsingOAuth2 ? `Bearer [user[${placeholders.OAUTH2_ACCESS_TOKEN_PATH}]]` : `Klaviyo-API-Key ${settings?.api_key || placeholders.API_KEY}`,
       "revision": API_REVISION,
       "Accept": "application/json",
       ...customHeaders,
