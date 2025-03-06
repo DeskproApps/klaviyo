@@ -13,12 +13,12 @@ export default async function getAccessToken(
 
         const { code, callbackURL, code_verifier } = params
         const fetch = await proxyFetch(client);
-        
+
         const response = await fetch(`https://a.klaviyo.com/oauth/token`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Basic MDg0OTk0OTEtMjExZS00ZWUzLWJhOTItMzVhYTVhNzYxMGRmOkcySFROelIxalUyNWpNZllNdXNScExtYzZyUnhZSVktRHNmeG5kNEtqVVZSZHo4MnhOZ2Z6TlRHT1NJanhhNXBaSm5tTUgxTzRBX1BFREVlb051NXF3"
+                "Authorization": "Basic __client_id+':'+client_secret.base64__"
             },
             body: new URLSearchParams({
                 grant_type: "authorization_code",
