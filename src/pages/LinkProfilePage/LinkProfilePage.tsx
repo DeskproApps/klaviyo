@@ -8,7 +8,7 @@ import { setEntityService } from "../../services/deskpro";
 import { useSearch } from "./hooks";
 import { LinkProfile } from "../../components";
 import type { FC } from "react";
-import type { Maybe, Settings, UserContext } from "../../types";
+import type { Maybe, Settings } from "../../types";
 import type { Profile } from "../../services/klaviyo/types";
 
 const LinkProfilePage: FC = () => {
