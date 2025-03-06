@@ -1,4 +1,4 @@
-import { AdminCallbackPage, CreateProfilePage, HomePage, LinkProfilePage, LoadingAppPage, UpdateProfilePage, VerifySettingsPage } from "./pages";
+import { AdminCallbackPage, CreateProfilePage, HomePage, LinkProfilePage, LoadingAppPage, LoginPage, UpdateProfilePage, VerifySettingsPage } from "./pages";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "./components";
 import { isNavigatePayload } from "./utils";
@@ -46,6 +46,7 @@ const App: FC = () => {
       <Routes>
         <Route path="/admin/verify_settings" element={<VerifySettingsPage />} />
         <Route path="/admin/callback" element={<AdminCallbackPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/profiles/link" element={<LinkProfilePage />} />
         <Route path="/profiles/create" element={<CreateProfilePage />} />
