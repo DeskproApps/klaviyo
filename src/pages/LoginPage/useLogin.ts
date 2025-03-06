@@ -61,7 +61,7 @@ export default function useLogin(): UseLogin {
                         ["response_type", "code"],
                         ["client_id", clientId ?? ""],
                         ["redirect_uri", callbackUrl],
-                        ["scope", "accounts:read events:read list:read metrics:read profiles:full_access segments:read"],
+                        ["scope", "accounts:read events:read lists:read metrics:read profiles:read profiles:write segments:read"],
                         ["code_challenge_method", "S256"],
                         ["code_challenge", authCodes.codeChallenge],
                         ["state", state],
