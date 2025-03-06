@@ -18,7 +18,7 @@ export default async function getAccessToken(
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Basic __client_id + ':' + client_secret.base64__"
+                "Authorization": "Basic MDg0OTk0OTEtMjExZS00ZWUzLWJhOTItMzVhYTVhNzYxMGRmOkcySFROelIxalUyNWpNZllNdXNScExtYzZyUnhZSVktRHNmeG5kNEtqVVZSZHo4MnhOZ2Z6TlRHT1NJanhhNXBaSm5tTUgxTzRBX1BFREVlb051NXF3"
             },
             body: new URLSearchParams({
                 grant_type: "authorization_code",

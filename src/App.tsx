@@ -2,17 +2,23 @@ import { AdminCallbackPage, CreateProfilePage, HomePage, LinkProfilePage, Loadin
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "./components";
 import { isNavigatePayload } from "./utils";
-import { LoadingSpinner, useDeskproAppClient, useDeskproAppEvents, useDeskproElements } from "@deskpro/app-sdk";
+import { LoadingSpinner, useDeskproAppClient, useDeskproAppEvents, useDeskproElements, useDeskproLatestAppContext } from "@deskpro/app-sdk";
 import { match } from "ts-pattern";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
-import { useUnlinkProfile } from "./hooks";
-import type { EventPayload } from "./types";
+import { useLogout, useUnlinkProfile } from "./hooks";
+import type { EventPayload, Settings } from "./types";
 import type { FC } from "react";
 
 const App: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
+  const { context } = useDeskproLatestAppContext<unknown, Settings>()
+  const { logoutActiveUser } = useLogout()
+
+  const isUsingOAuth = context?.settings?.use_api_key !== true
+
+
   const { unlink, isLoading } = useUnlinkProfile();
 
   useDeskproElements(({ registerElement }) => {
@@ -23,6 +29,11 @@ const App: FC = () => {
     return match(payload.type)
       .with("changePage", () => isNavigatePayload(payload) && navigate(payload.path))
       .with("unlink", unlink)
+      .with("logout", () => {
+        if (isUsingOAuth) {
+          logoutActiveUser()
+        }
+      })
       .run();
   }, 500);
 

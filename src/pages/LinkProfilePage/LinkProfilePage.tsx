@@ -8,13 +8,13 @@ import { setEntityService } from "../../services/deskpro";
 import { useSearch } from "./hooks";
 import { LinkProfile } from "../../components";
 import type { FC } from "react";
-import type { Maybe, UserContext } from "../../types";
+import type { Maybe, Settings, UserContext } from "../../types";
 import type { Profile } from "../../services/klaviyo/types";
 
 const LinkProfilePage: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: UserContext };
+  const { context } = useDeskproLatestAppContext<unknown, Settings>();
   const { asyncErrorHandler } = useAsyncError();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedProfile, setSelectedProfile] = useState<Maybe<Profile>>(null);
@@ -48,6 +48,16 @@ const LinkProfilePage: FC = () => {
       type: "home_button",
       payload: { type: "changePage", path: "/home" },
     });
+
+    if (context?.settings.use_api_key !== true) {
+      registerElement("menu", {
+        type: "menu",
+        items: [{
+          title: "Logout",
+          payload: { type: "logout" },
+        }],
+      })
+    }
   });
 
   return (

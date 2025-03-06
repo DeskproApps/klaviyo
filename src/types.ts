@@ -67,7 +67,10 @@ export type NavigateToChangePage = { type: "changePage", path: To };
 
 export type UnlinkPayload = { type: "unlink" };
 
+export type LogoutPayload = { type: "logout" };
+
 export type EventPayload =
   | NavigateToChangePage
   | UnlinkPayload
+  | LogoutPayload
   ;
