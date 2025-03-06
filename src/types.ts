@@ -37,7 +37,7 @@ export type PreInstalledSettings = Settings & { api_key?: string }
 export type Settings = {
   client_id?: string,
   use_deskpro_saas?: boolean,
-  use_access_token?: boolean,
+  use_api_key?: boolean,
 };
 
 export type DPUser = {
