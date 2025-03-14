@@ -2,7 +2,7 @@ import { createSearchParams, useNavigate } from "react-router-dom";
 import { generateCodes, tryToLinkAutomatically } from "../../utils";
 import { getAccountsService } from "../../services/klaviyo";
 import { getEntityListService } from "../../services/deskpro";
-import { OAuth2Result, useDeskproLatestAppContext, useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
+import { IOAuth2, OAuth2Result, useDeskproLatestAppContext, useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
 import { placeholders } from "../../constants";
 import { Settings, UserData } from "../../types";
 import { useCallback, useState } from "react";
@@ -19,6 +19,8 @@ export default function useLogin(): UseLogin {
     const [authUrl, setAuthUrl] = useState<string | null>(null)
     const [error, setError] = useState<null | string>(null)
     const [isLoading, setIsLoading] = useState(false)
+    const [isPolling, setIsPolling] = useState(false)
+    const [oauth2Context, setOAuth2Context] = useState<IOAuth2 | null>(null)
     const [authCodes, setAuthCodes] = useState<{ codeChallenge: string, codeVerifier: string } | null>(null)
     const navigate = useNavigate()
 
@@ -54,7 +56,7 @@ export default function useLogin(): UseLogin {
             return
         }
 
-        const oauth2 = mode === "local" ?
+        const oauth2Response = mode === "local" ?
             await client.startOauth2Local(
                 ({ state, callbackUrl }) => {
                     return `https://www.klaviyo.com/oauth/authorize?${createSearchParams([
@@ -70,7 +72,7 @@ export default function useLogin(): UseLogin {
                 /\bcode=(?<code>[^&#]+)/,
                 async (code: string): Promise<OAuth2Result> => {
                     // Extract the callback URL from the authorization URL
-                    const url = new URL(oauth2.authorizationUrl);
+                    const url = new URL(oauth2Response.authorizationUrl);
                     const redirectUri = url.searchParams.get("redirect_uri");
 
                     if (!redirectUri) {
@@ -85,36 +87,53 @@ export default function useLogin(): UseLogin {
             // Global Proxy Service
             : await client.startOauth2Global("TW2mwcHyQwCmkrzNjgdMAQ");
 
-        setAuthUrl(oauth2.authorizationUrl)
-        setIsLoading(false)
+        setAuthUrl(oauth2Response.authorizationUrl)
+        setOAuth2Context(oauth2Response)
 
-        try {
-            const result = await oauth2.poll()
-
-            await client.setUserState(placeholders.OAUTH2_ACCESS_TOKEN_PATH, result.data.access_token, { backend: true })
-
-            if (result.data.refresh_token) {
-                await client.setUserState(placeholders.OAUTH2_REFRESH_TOKEN_PATH, result.data.refresh_token, { backend: true })
-            }
-
-            try {
-                await getAccountsService(client)
-            } catch {
-                throw new Error("Error authenticating user")
-            }
-
-            tryToLinkAutomatically(client, user)
-                .then(() => getEntityListService(client, user.id))
-                .then((entityIds) => navigate(entityIds.length > 0 ? "/home" : "/profiles/link"))
-                .catch(() => { navigate("/profiles/link") })
-        } catch (error) {
-            setError(error instanceof Error ? error.message : 'Unknown error');
-            setIsLoading(false);
-        }
     }, [setAuthUrl, context?.settings.use_deskpro_saas, authCodes])
+
+    useInitialisedDeskproAppClient((client) => {
+        if (!user || !oauth2Context) {
+            return
+        }
+
+        const startPolling = async () => {
+            try {
+                const result = await oauth2Context.poll()
+
+                await client.setUserState(placeholders.OAUTH2_ACCESS_TOKEN_PATH, result.data.access_token, { backend: true })
+
+                if (result.data.refresh_token) {
+                    await client.setUserState(placeholders.OAUTH2_REFRESH_TOKEN_PATH, result.data.refresh_token, { backend: true })
+                }
+
+                try {
+                    await getAccountsService(client)
+                } catch {
+                    throw new Error("Error authenticating user")
+                }
+
+                tryToLinkAutomatically(client, user)
+                    .then(() => getEntityListService(client, user.id))
+                    .then((entityIds) => navigate(entityIds.length > 0 ? "/home" : "/profiles/link"))
+                    .catch(() => { navigate("/profiles/link") })
+            } catch (error) {
+                setError(error instanceof Error ? error.message : 'Unknown error');
+            } finally {
+                setIsLoading(false)
+                setIsPolling(false)
+            }
+        }
+
+        if (isPolling) {
+            startPolling()
+        }
+    }, [isPolling, user, oauth2Context, navigate])
+
 
     const onSignIn = useCallback(() => {
         setIsLoading(true);
+        setIsPolling(true);
         window.open(authUrl ?? "", '_blank');
     }, [setIsLoading, authUrl]);
 
