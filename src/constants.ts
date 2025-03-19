@@ -17,6 +17,8 @@ export const DEFAULT_ERROR = "There was an error!";
 
 export const placeholders = {
   API_KEY: "__api_key__",
+  OAUTH2_ACCESS_TOKEN_PATH: "oauth2/access_token",
+  OAUTH2_REFRESH_TOKEN_PATH: "oauth2/refresh_token"
 };
 
 /** Klaviyo Pro */

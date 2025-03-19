@@ -1,23 +1,23 @@
-import { useMemo, useState, useCallback } from "react";
-import { get } from "lodash";
-import { useNavigate } from "react-router-dom";
-import { useDeskproAppClient, useDeskproLatestAppContext } from "@deskpro/app-sdk";
-import { useSetTitle, useRegisterElements } from "../../hooks";
-import { setEntityService } from "../../services/deskpro";
+import { CreateProfile } from "../../components";
 import { createProfileService } from "../../services/klaviyo";
+import { get } from "lodash";
 import { getError } from "../../utils";
 import { getProfileValues } from "../../components/ProfileForm";
-import { CreateProfile } from "../../components";
+import { setEntityService } from "../../services/deskpro";
+import { useDeskproAppClient, useDeskproLatestAppContext } from "@deskpro/app-sdk";
+import { useMemo, useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSetTitle, useRegisterElements } from "../../hooks";
 import type { FC } from "react";
-import type { Maybe, UserContext } from "../../types";
-import type { Profile } from "../../services/klaviyo/types";
 import type { FormValidationSchema } from "../../components/ProfileForm";
+import type { Maybe, Settings } from "../../types";
+import type { Profile } from "../../services/klaviyo/types";
 
 const CreateProfilePage: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: UserContext };
-  const [error, setError] = useState<Maybe<string|string[]>>(null);
+  const { context } = useDeskproLatestAppContext<unknown, Settings>()
+  const [error, setError] = useState<Maybe<string | string[]>>(null);
   const dpUserId = useMemo(() => get(context, ["data", "user", "id"]), [context]);
   const profile: Maybe<Profile> = useMemo(() => {
     const email = get(context, ["data", "user", "primaryEmail"])
@@ -31,6 +31,9 @@ const CreateProfilePage: FC = () => {
       }
     } as Profile;
   }, [context]);
+
+  const isUsingOAuth = context?.settings.use_api_key !== true || context.settings.use_advanced_connect === false
+
 
   const onNavigateToLink = useCallback(() => navigate("/profiles/link"), [navigate]);
 
@@ -49,7 +52,7 @@ const CreateProfilePage: FC = () => {
 
         return !profileId
           ? Promise.resolve()
-          : setEntityService(client, dpUserId?? "", profileId);
+          : setEntityService(client, dpUserId ?? "", profileId);
       })
       .then(() => navigate("/home"))
       .catch((err) => setError(getError(err)));
@@ -62,6 +65,16 @@ const CreateProfilePage: FC = () => {
       type: "home_button",
       payload: { type: "changePage", path: "/home" },
     });
+
+    if (isUsingOAuth) {
+      registerElement("menu", {
+        type: "menu",
+        items: [{
+          title: "Logout",
+          payload: { type: "logout" },
+        }],
+      })
+    }
   });
 
   return (

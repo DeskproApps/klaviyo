@@ -1,30 +1,24 @@
+import { AdminCallbackPage, CreateProfilePage, HomePage, LinkProfilePage, LoadingAppPage, LoginPage, UpdateProfilePage, VerifySettingsPage } from "./pages";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "./components";
+import { isNavigatePayload } from "./utils";
+import { LoadingSpinner, useDeskproAppClient, useDeskproAppEvents, useDeskproElements, useDeskproLatestAppContext } from "@deskpro/app-sdk";
+import { match } from "ts-pattern";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
-import { match } from "ts-pattern";
-import { ErrorBoundary } from "react-error-boundary";
-import {
-  LoadingSpinner,
-  useDeskproElements,
-  useDeskproAppClient,
-  useDeskproAppEvents,
-} from "@deskpro/app-sdk";
-import { useUnlinkProfile } from "./hooks";
-import { isNavigatePayload } from "./utils";
-import { ErrorFallback } from "./components";
-import {
-  HomePage,
-  LoadingAppPage,
-  LinkProfilePage,
-  CreateProfilePage,
-  UpdateProfilePage,
-  VerifySettingsPage,
-} from "./pages";
+import { useLogout, useUnlinkProfile } from "./hooks";
+import type { EventPayload, Settings } from "./types";
 import type { FC } from "react";
-import type { EventPayload } from "./types";
 
 const App: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
+  const { context } = useDeskproLatestAppContext<unknown, Settings>()
+  const { logoutActiveUser } = useLogout()
+
+  const isUsingOAuth = context?.settings?.use_api_key !== true
+
+
   const { unlink, isLoading } = useUnlinkProfile();
 
   useDeskproElements(({ registerElement }) => {
@@ -35,6 +29,11 @@ const App: FC = () => {
     return match(payload.type)
       .with("changePage", () => isNavigatePayload(payload) && navigate(payload.path))
       .with("unlink", unlink)
+      .with("logout", () => {
+        if (isUsingOAuth) {
+          logoutActiveUser()
+        }
+      })
       .run();
   }, 500);
 
@@ -49,19 +48,21 @@ const App: FC = () => {
 
   if (!client || isLoading) {
     return (
-      <LoadingSpinner/>
+      <LoadingSpinner />
     );
   }
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <Routes>
-        <Route path="/admin/verify_settings" element={<VerifySettingsPage/>} />
-        <Route path="/home" element={<HomePage/>}/>
-        <Route path="/profiles/link" element={<LinkProfilePage/>} />
-        <Route path="/profiles/create" element={<CreateProfilePage/>} />
-        <Route path="/profiles/update" element={<UpdateProfilePage/>} />
-        <Route index element={<LoadingAppPage/>} />
+        <Route path="/admin/verify_settings" element={<VerifySettingsPage />} />
+        <Route path="/admin/callback" element={<AdminCallbackPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/profiles/link" element={<LinkProfilePage />} />
+        <Route path="/profiles/create" element={<CreateProfilePage />} />
+        <Route path="/profiles/update" element={<UpdateProfilePage />} />
+        <Route index element={<LoadingAppPage />} />
       </Routes>
     </ErrorBoundary>
   );
