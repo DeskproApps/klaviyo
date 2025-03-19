@@ -16,8 +16,8 @@ import type { Profile } from "../../services/klaviyo/types";
 const CreateProfilePage: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext<unknown, Settings>() 
-  const [error, setError] = useState<Maybe<string|string[]>>(null);
+  const { context } = useDeskproLatestAppContext<unknown, Settings>()
+  const [error, setError] = useState<Maybe<string | string[]>>(null);
   const dpUserId = useMemo(() => get(context, ["data", "user", "id"]), [context]);
   const profile: Maybe<Profile> = useMemo(() => {
     const email = get(context, ["data", "user", "primaryEmail"])
@@ -31,6 +31,9 @@ const CreateProfilePage: FC = () => {
       }
     } as Profile;
   }, [context]);
+
+  const isUsingOAuth = context?.settings.use_api_key !== true || context.settings.use_advanced_connect === false
+
 
   const onNavigateToLink = useCallback(() => navigate("/profiles/link"), [navigate]);
 
@@ -49,7 +52,7 @@ const CreateProfilePage: FC = () => {
 
         return !profileId
           ? Promise.resolve()
-          : setEntityService(client, dpUserId?? "", profileId);
+          : setEntityService(client, dpUserId ?? "", profileId);
       })
       .then(() => navigate("/home"))
       .catch((err) => setError(getError(err)));
@@ -63,7 +66,7 @@ const CreateProfilePage: FC = () => {
       payload: { type: "changePage", path: "/home" },
     });
 
-    if (context?.settings.use_api_key !== true) {
+    if (isUsingOAuth) {
       registerElement("menu", {
         type: "menu",
         items: [{

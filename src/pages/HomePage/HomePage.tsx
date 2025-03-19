@@ -8,6 +8,8 @@ import type { FC } from "react";
 const HomePage: FC = () => {
   const { isLoading, profile, lists, campaigns } = useProfile();
   const { context } = useDeskproLatestAppContext<unknown, Settings>()
+  const isUsingOAuth = context?.settings.use_api_key !== true || context.settings.use_advanced_connect === false
+
 
   useSetTitle("Klaviyo");
 
@@ -18,7 +20,7 @@ const HomePage: FC = () => {
         title: "Unlink profile",
         payload: { type: "unlink" },
       },
-      ...(context?.settings.use_api_key !== true
+      ...(isUsingOAuth
         ? [
           {
             title: "Logout",

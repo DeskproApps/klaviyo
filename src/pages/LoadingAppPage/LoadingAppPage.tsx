@@ -17,7 +17,7 @@ const LoadingAppPage: FC = () => {
   const navigate = useNavigate();
 
   // Determine authentication method from settings
-  const isUsingOAuth = context?.settings.use_api_key !== true
+  const isUsingOAuth = context?.settings.use_api_key !== true || context.settings.use_advanced_connect === false
   const user = context?.data?.user
 
   useDeskproElements(({ registerElement, clearElements }) => {

@@ -1,5 +1,4 @@
-import { useMemo, useState, useCallback } from "react";
-import { get } from "lodash";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
 import { useDeskproAppClient, useDeskproLatestAppContext } from "@deskpro/app-sdk";
@@ -8,19 +7,21 @@ import { setEntityService } from "../../services/deskpro";
 import { useSearch } from "./hooks";
 import { LinkProfile } from "../../components";
 import type { FC } from "react";
-import type { Maybe, Settings } from "../../types";
+import type { Maybe, Settings, UserData } from "../../types";
 import type { Profile } from "../../services/klaviyo/types";
 
 const LinkProfilePage: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext<unknown, Settings>();
+  const { context } = useDeskproLatestAppContext<UserData, Settings>();
   const { asyncErrorHandler } = useAsyncError();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedProfile, setSelectedProfile] = useState<Maybe<Profile>>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const { isLoading, profiles } = useSearch(searchQuery);
-  const dpUserId = useMemo(() => get(context, ["data", "user", "id"]), [context]);
+  const dpUserId = context?.data?.user.id
+
+  const isUsingOAuth = context?.settings.use_api_key !== true || context.settings.use_advanced_connect === false
 
   const onChangeSearch = useDebouncedCallback(setSearchQuery, 1000);
 
@@ -49,7 +50,7 @@ const LinkProfilePage: FC = () => {
       payload: { type: "changePage", path: "/home" },
     });
 
-    if (context?.settings.use_api_key !== true) {
+    if (isUsingOAuth) {
       registerElement("menu", {
         type: "menu",
         items: [{

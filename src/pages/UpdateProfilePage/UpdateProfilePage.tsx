@@ -1,4 +1,3 @@
-import { get } from "lodash";
 import { getError } from "../../utils";
 import { getProfileValues } from "../../components/ProfileForm";
 import { UpdateProfile } from "../../components";
@@ -17,7 +16,8 @@ const UpdateProfilePage: FC = () => {
   const {context}= useDeskproLatestAppContext<unknown, Settings>()
   const [error, setError] = useState<Maybe<string|string[]>>(null);
   const { profile, isLoading } = useProfile();
-  const profileId = useMemo(() => get(profile, ["id"]), [profile]);
+  const profileId = useMemo(() => profile?.id, [profile]);
+  const isUsingOAuth = context?.settings.use_api_key !== true || context.settings.use_advanced_connect === false
 
   const onCancel = useCallback(() => navigate(`/home`), [navigate]);
 
@@ -41,7 +41,7 @@ const UpdateProfilePage: FC = () => {
       payload: { type: "changePage", path: "/home" },
     });
 
-    if (context?.settings.use_api_key !== true) {
+    if (isUsingOAuth) {
       registerElement("menu", {
         type: "menu",
         items: [{
