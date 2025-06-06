@@ -1,7 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
 import { match } from "ts-pattern";
-import { ErrorBoundary } from "react-error-boundary";
 import {
   LoadingSpinner,
   useDeskproElements,
@@ -21,6 +20,7 @@ import {
 } from "./pages";
 import type { FC } from "react";
 import type { EventPayload } from "./types";
+import { ErrorBoundary } from "@sentry/react";
 
 const App: FC = () => {
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ const App: FC = () => {
   }
 
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
+    <ErrorBoundary fallback={ErrorFallback}>
       <Routes>
         <Route path="/admin/verify_settings" element={<VerifySettingsPage/>} />
         <Route path="/home" element={<HomePage/>}/>
