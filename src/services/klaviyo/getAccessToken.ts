@@ -22,8 +22,6 @@ export default async function getAccessToken(
             },
             body: new URLSearchParams({
                 grant_type: "authorization_code",
-                client_id: "__client_id__",
-                client_secret: "__client_secret__",
                 code: code,
                 code_verifier: code_verifier,
                 redirect_uri: callbackURL,
