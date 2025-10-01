@@ -52,7 +52,7 @@
     "@typescript/lib-dom": "npm:@types/web@^0.0.86",
     "@vitejs/plugin-react": "^4.6.0",
     "adm-zip": "^0.5.16",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.1.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.2",
