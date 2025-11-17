@@ -38,7 +38,12 @@
       {
         "url": "https://a.klaviyo.com/api/.*",
         "methods": ["GET", "POST", "PATCH"],
-        "timeout": 20
+        "timeout": 20,
+        "settingsInjection": {
+          "api_key": {
+            "header": ["Authorization"]
+          }
+        }
       }
     ]
   }
